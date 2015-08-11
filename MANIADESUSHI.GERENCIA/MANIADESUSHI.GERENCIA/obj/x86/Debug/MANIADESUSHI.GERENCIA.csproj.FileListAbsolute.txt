@@ -1,0 +1,8 @@
+C:\Users\Lediane Santana\AppData\Local\Temporary Projects\MANIADESUSHI.GERENCIA\bin\Debug\MANIADESUSHI.GERENCIA.exe
+C:\Users\Lediane Santana\AppData\Local\Temporary Projects\MANIADESUSHI.GERENCIA\bin\Debug\MANIADESUSHI.GERENCIA.pdb
+C:\Users\Lediane Santana\AppData\Local\Temporary Projects\MANIADESUSHI.GERENCIA\obj\x86\Debug\MANIADESUSHI.GERENCIA.Properties.Resources.resources
+C:\Users\Lediane Santana\AppData\Local\Temporary Projects\MANIADESUSHI.GERENCIA\obj\x86\Debug\MANIADESUSHI.GERENCIA.csproj.GenerateResource.Cache
+C:\Users\Lediane Santana\AppData\Local\Temporary Projects\MANIADESUSHI.GERENCIA\obj\x86\Debug\MANIADESUSHI.GERENCIA.exe
+C:\Users\Lediane Santana\AppData\Local\Temporary Projects\MANIADESUSHI.GERENCIA\obj\x86\Debug\MANIADESUSHI.GERENCIA.pdb
+C:\xampp\htdocs\Projeto-CSharp\MANIADESUSHI.GERENCIA\MANIADESUSHI.GERENCIA\obj\x86\Debug\MANIADESUSHI.GERENCIA.exe
+C:\xampp\htdocs\Projeto-CSharp\MANIADESUSHI.GERENCIA\MANIADESUSHI.GERENCIA\obj\x86\Debug\MANIADESUSHI.GERENCIA.pdb
