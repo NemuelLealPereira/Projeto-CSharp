@@ -90,6 +90,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Klukeart-Cubes-Box-24-Sushi.ico" />
     <Content Include="Resources\ManiaDeSushi.ico" />
     <None Include="Resources\PlanoDeFundoProdutos.jpg" />
   </ItemGroup>
