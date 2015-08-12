@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmRealizarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRealizarPedido.Designer.cs">
+      <DependentUpon>frmRealizarPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmRealizarPedido.resx">
+      <DependentUpon>frmRealizarPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +101,7 @@
   <ItemGroup>
     <Content Include="Resources\Klukeart-Cubes-Box-24-Sushi.ico" />
     <Content Include="Resources\ManiaDeSushi.ico" />
+    <None Include="Resources\PisoUdeUmadeira.jpg" />
     <None Include="Resources\PlanoDeFundoProdutos.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

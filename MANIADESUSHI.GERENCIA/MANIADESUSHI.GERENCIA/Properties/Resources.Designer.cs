@@ -63,6 +63,16 @@ namespace MANIADESUSHI.GERENCIA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PisoUdeUmadeira {
+            get {
+                object obj = ResourceManager.GetObject("PisoUdeUmadeira", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PlanoDeFundoProdutos {
             get {
                 object obj = ResourceManager.GetObject("PlanoDeFundoProdutos", resourceCulture);

@@ -15,7 +15,7 @@ namespace MANIADESUSHI.GERENCIA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmProdutos());
+            Application.Run(new frmRealizarPedido());
             //Application.Run(new frmClientes());
         }
     }
