@@ -28,12 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
+            this.ctxmsLogin = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ttLogin = new System.Windows.Forms.ToolTip(this.components);
+            this.realizarPediddotsmi = new System.Windows.Forms.ToolStripMenuItem();
             this.pcbxLogin = new System.Windows.Forms.PictureBox();
+            this.ctxmsLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxLogin)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +68,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(100, 20);
             this.txtNome.TabIndex = 2;
+            this.ttLogin.SetToolTip(this.txtNome, "Informe o Nome");
             // 
             // txtSenha
             // 
@@ -70,6 +77,7 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
             this.txtSenha.TabIndex = 3;
+            this.ttLogin.SetToolTip(this.txtSenha, "Informe a Senha");
             // 
             // lblSenha
             // 
@@ -79,6 +87,21 @@
             this.lblSenha.Size = new System.Drawing.Size(38, 13);
             this.lblSenha.TabIndex = 4;
             this.lblSenha.Text = "Senha";
+            // 
+            // ctxmsLogin
+            // 
+            this.ctxmsLogin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.realizarPediddotsmi});
+            this.ctxmsLogin.Name = "contextMenuStrip1";
+            this.ctxmsLogin.Size = new System.Drawing.Size(162, 26);
+            // 
+            // realizarPediddotsmi
+            // 
+            this.realizarPediddotsmi.Image = global::MANIADESUSHI.GERENCIA.Properties.Resources.RealizarPedido1;
+            this.realizarPediddotsmi.Name = "realizarPediddotsmi";
+            this.realizarPediddotsmi.Size = new System.Drawing.Size(161, 22);
+            this.realizarPediddotsmi.Text = "Realizar Pediddo";
+            this.realizarPediddotsmi.Click += new System.EventHandler(this.realizarPediddoToolStripMenuItem_Click);
             // 
             // pcbxLogin
             // 
@@ -95,6 +118,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(340, 131);
+            this.ContextMenuStrip = this.ctxmsLogin;
             this.Controls.Add(this.pcbxLogin);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.txtSenha);
@@ -102,9 +126,13 @@
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.btnLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login do Usuário";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmLogin_FormClosed);
+            this.Load += new System.EventHandler(this.frmLogin_Load);
+            this.ctxmsLogin.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbxLogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -119,5 +147,8 @@
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.PictureBox pcbxLogin;
+        private System.Windows.Forms.ContextMenuStrip ctxmsLogin;
+        private System.Windows.Forms.ToolStripMenuItem realizarPediddotsmi;
+        private System.Windows.Forms.ToolTip ttLogin;
     }
 }

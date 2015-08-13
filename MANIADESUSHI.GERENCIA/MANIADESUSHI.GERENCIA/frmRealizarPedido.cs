@@ -41,8 +41,9 @@ namespace MANIADESUSHI.GERENCIA
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form frmRealizarPedido = new frmRealizarPedido();
-            frmRealizarPedido.Show();
+            Form frmCliente = new frmClientes(this.nomeUsuario);
+            //frmCliente.MdiParent = this;
+            frmCliente.Show();
         }
 
         private void frmRealizarPedido_FormClosed(object sender, FormClosedEventArgs e)

@@ -63,6 +63,16 @@ namespace MANIADESUSHI.GERENCIA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap depositphotos_38331913_Search_Icon {
+            get {
+                object obj = ResourceManager.GetObject("depositphotos_38331913-Search-Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Login {
             get {
                 object obj = ResourceManager.GetObject("Login", resourceCulture);
@@ -116,6 +126,26 @@ namespace MANIADESUSHI.GERENCIA.Properties {
         internal static System.Drawing.Bitmap PlanoDeFundoProdutos {
             get {
                 object obj = ResourceManager.GetObject("PlanoDeFundoProdutos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RealizarPedido {
+            get {
+                object obj = ResourceManager.GetObject("RealizarPedido", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RealizarPedido1 {
+            get {
+                object obj = ResourceManager.GetObject("RealizarPedido1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

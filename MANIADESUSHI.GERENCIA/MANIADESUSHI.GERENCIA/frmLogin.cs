@@ -22,7 +22,26 @@ namespace MANIADESUSHI.GERENCIA
             {
                 Form frmRealizarPedido = new frmRealizarPedido(txtNome.Text);
                 frmRealizarPedido.Show();
+
+                this.Hide();
             }
+        }
+
+        private void realizarPediddoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmRealizarPedido = new frmRealizarPedido("Administrador");
+            frmRealizarPedido.Show();
+            this.Hide();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

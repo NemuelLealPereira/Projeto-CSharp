@@ -117,7 +117,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\depositphotos_38331913-Search-Icon.jpg" />
     <Content Include="Resources\Klukeart-Cubes-Box-24-Sushi.ico" />
+    <None Include="Resources\RealizarPedido1.jpg" />
+    <None Include="Resources\RealizarPedido.jpg" />
     <None Include="Resources\Login.jpg" />
     <Content Include="Resources\ManiaDeSushi.ico" />
     <None Include="Resources\ManiaLogotipo2.png" />
