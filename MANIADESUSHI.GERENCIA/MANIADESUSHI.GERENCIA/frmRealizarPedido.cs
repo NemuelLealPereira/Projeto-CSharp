@@ -11,14 +11,23 @@ namespace MANIADESUSHI.GERENCIA
 {
     public partial class frmRealizarPedido : Form
     {
+        String nomeUsuario;
+
+
         public frmRealizarPedido()
         {
             InitializeComponent();
         }
 
+        public frmRealizarPedido(String nomeUsuario)
+        {
+            InitializeComponent();
+            this.nomeUsuario = nomeUsuario;
+        }
+
         private void frmRealizarPedido_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Esse é o Sabor que vai virar Mania!");
+            this.Text = this.Text + " - " + this.nomeUsuario;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,5 +38,18 @@ namespace MANIADESUSHI.GERENCIA
             cmbTipoProduto.Focus();
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form frmRealizarPedido = new frmRealizarPedido();
+            frmRealizarPedido.Show();
+        }
+
+        private void frmRealizarPedido_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+
     }
 }

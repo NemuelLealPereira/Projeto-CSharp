@@ -15,7 +15,8 @@ namespace MANIADESUSHI.GERENCIA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmRealizarPedido());
+            Application.Run(new frmSplahManiaDeSushi());
+            //Application.Run(new frmRealizarPedido());
             //Application.Run(new frmClientes());
         }
     }
