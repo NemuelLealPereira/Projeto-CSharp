@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbTipoProduto = new System.Windows.Forms.ComboBox();
             this.txtNomeProduto = new System.Windows.Forms.TextBox();
@@ -43,7 +42,7 @@
             this.lblLocalizartoolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.txtLocalizartoolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,17 +77,7 @@
             this.txtNomeCliente.Name = "txtNomeCliente";
             this.txtNomeCliente.Size = new System.Drawing.Size(216, 20);
             this.txtNomeCliente.TabIndex = 3;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 205);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(785, 220);
-            this.dataGridView1.TabIndex = 4;
+            this.txtNomeCliente.TextChanged += new System.EventHandler(this.txtNomeCliente_TextChanged);
             // 
             // label2
             // 
@@ -116,6 +105,7 @@
             this.cmbTipoProduto.Name = "cmbTipoProduto";
             this.cmbTipoProduto.Size = new System.Drawing.Size(216, 21);
             this.cmbTipoProduto.TabIndex = 5;
+            this.cmbTipoProduto.Click += new System.EventHandler(this.cmbTipoProduto_Click);
             // 
             // txtNomeProduto
             // 
@@ -177,18 +167,27 @@
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(12, 189);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(785, 236);
+            this.richTextBox1.TabIndex = 10;
+            this.richTextBox1.Text = "";
+            // 
             // frmRealizarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MANIADESUSHI.GERENCIA.Properties.Resources.PisoUdeUmadeira;
             this.ClientSize = new System.Drawing.Size(809, 437);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtNomeProduto);
             this.Controls.Add(this.cmbTipoProduto);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtNomeCliente);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -202,7 +201,6 @@
             this.Text = "Realizar Pedido";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmRealizarPedido_FormClosed);
             this.Load += new System.EventHandler(this.frmRealizarPedido_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -215,7 +213,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNomeCliente;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbTipoProduto;
         private System.Windows.Forms.TextBox txtNomeProduto;
@@ -226,5 +223,6 @@
         private System.Windows.Forms.ToolStripLabel lblLocalizartoolStripLabel1;
         private System.Windows.Forms.ToolStripTextBox txtLocalizartoolStripTextBox1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
