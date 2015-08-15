@@ -29,273 +29,204 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Temaki Sem Arroz");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Yakissoba Sem Pimentão");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Terça Mania");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Quarta Mania");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Quinta Mania");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Promoção Do Dia", new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode4,
-            treeNode5});
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Desejos do Cliente", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode6});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientes));
-            this.lbNomeCliente = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.lbNome = new System.Windows.Forms.Label();
+            this.lbContato = new System.Windows.Forms.Label();
+            this.lbBairro = new System.Windows.Forms.Label();
+            this.lbRua = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.txtBairro = new System.Windows.Forms.TextBox();
+            this.txtRua = new System.Windows.Forms.TextBox();
+            this.lbNumero = new System.Windows.Forms.Label();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.lbPR = new System.Windows.Forms.Label();
+            this.txtPR = new System.Windows.Forms.TextBox();
+            this.lbCPF = new System.Windows.Forms.Label();
+            this.lbCEP = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.label8 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.administradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteVipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mtxtCEP = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtContato = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtCPF = new System.Windows.Forms.MaskedTextBox();
+            this.novoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvDadosClientes = new System.Windows.Forms.DataGridView();
+            this.nomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDadosClientes)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbNomeCliente
+            // lbNome
             // 
-            this.lbNomeCliente.AutoSize = true;
-            this.lbNomeCliente.BackColor = System.Drawing.Color.Transparent;
-            this.lbNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNomeCliente.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.lbNomeCliente.Location = new System.Drawing.Point(48, 100);
-            this.lbNomeCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbNomeCliente.Name = "lbNomeCliente";
-            this.lbNomeCliente.Size = new System.Drawing.Size(112, 17);
-            this.lbNomeCliente.TabIndex = 1;
-            this.lbNomeCliente.Text = "Nome do Cliente";
+            this.lbNome.AutoSize = true;
+            this.lbNome.BackColor = System.Drawing.Color.Transparent;
+            this.lbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNome.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.lbNome.Location = new System.Drawing.Point(48, 100);
+            this.lbNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNome.Name = "lbNome";
+            this.lbNome.Size = new System.Drawing.Size(45, 17);
+            this.lbNome.TabIndex = 1;
+            this.lbNome.Text = "Nome";
             // 
-            // label2
+            // lbContato
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label2.Location = new System.Drawing.Point(397, 100);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Contato";
+            this.lbContato.AutoSize = true;
+            this.lbContato.BackColor = System.Drawing.Color.Transparent;
+            this.lbContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbContato.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.lbContato.Location = new System.Drawing.Point(282, 103);
+            this.lbContato.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbContato.Name = "lbContato";
+            this.lbContato.Size = new System.Drawing.Size(57, 17);
+            this.lbContato.TabIndex = 2;
+            this.lbContato.Text = "Contato";
             // 
-            // label4
+            // lbBairro
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label4.Location = new System.Drawing.Point(48, 218);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Bairro";
+            this.lbBairro.AutoSize = true;
+            this.lbBairro.BackColor = System.Drawing.Color.Transparent;
+            this.lbBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBairro.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.lbBairro.Location = new System.Drawing.Point(48, 163);
+            this.lbBairro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbBairro.Name = "lbBairro";
+            this.lbBairro.Size = new System.Drawing.Size(46, 17);
+            this.lbBairro.TabIndex = 3;
+            this.lbBairro.Text = "Bairro";
             // 
-            // label3
+            // lbRua
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label3.Location = new System.Drawing.Point(397, 218);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Rua";
+            this.lbRua.AutoSize = true;
+            this.lbRua.BackColor = System.Drawing.Color.Transparent;
+            this.lbRua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRua.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.lbRua.Location = new System.Drawing.Point(282, 166);
+            this.lbRua.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbRua.Name = "lbRua";
+            this.lbRua.Size = new System.Drawing.Size(34, 17);
+            this.lbRua.TabIndex = 4;
+            this.lbRua.Text = "Rua";
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(189, 91);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 23);
-            this.textBox1.TabIndex = 5;
+            this.txtNome.Location = new System.Drawing.Point(119, 94);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(132, 23);
+            this.txtNome.TabIndex = 5;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
-            // textBox2
+            // txtNumero
             // 
-            this.textBox2.Location = new System.Drawing.Point(189, 241);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 23);
-            this.textBox2.TabIndex = 6;
+            this.txtNumero.Location = new System.Drawing.Point(119, 189);
+            this.txtNumero.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(132, 23);
+            this.txtNumero.TabIndex = 6;
             // 
-            // textBox4
+            // txtBairro
             // 
-            this.textBox4.Location = new System.Drawing.Point(189, 209);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(132, 23);
-            this.textBox4.TabIndex = 8;
+            this.txtBairro.Location = new System.Drawing.Point(119, 157);
+            this.txtBairro.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(132, 23);
+            this.txtBairro.TabIndex = 8;
             // 
-            // textBox6
+            // txtRua
             // 
-            this.textBox6.Location = new System.Drawing.Point(548, 209);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(132, 23);
-            this.textBox6.TabIndex = 10;
+            this.txtRua.Location = new System.Drawing.Point(433, 157);
+            this.txtRua.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRua.Name = "txtRua";
+            this.txtRua.Size = new System.Drawing.Size(132, 23);
+            this.txtRua.TabIndex = 10;
             // 
-            // label6
+            // lbNumero
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label6.Location = new System.Drawing.Point(48, 250);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 17);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Número";
+            this.lbNumero.AutoSize = true;
+            this.lbNumero.BackColor = System.Drawing.Color.Transparent;
+            this.lbNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNumero.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.lbNumero.Location = new System.Drawing.Point(48, 195);
+            this.lbNumero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNumero.Name = "lbNumero";
+            this.lbNumero.Size = new System.Drawing.Size(58, 17);
+            this.lbNumero.TabIndex = 12;
+            this.lbNumero.Text = "Número";
             // 
-            // button1
+            // btnCadastrar
             // 
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(580, 389);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCadastrar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCadastrar.Location = new System.Drawing.Point(465, 237);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(100, 28);
+            this.btnCadastrar.TabIndex = 13;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
+            // lbPR
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label1.Location = new System.Drawing.Point(397, 250);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 17);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Ponto De Referencia";
+            this.lbPR.AutoSize = true;
+            this.lbPR.BackColor = System.Drawing.Color.Transparent;
+            this.lbPR.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPR.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.lbPR.Location = new System.Drawing.Point(282, 198);
+            this.lbPR.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbPR.Name = "lbPR";
+            this.lbPR.Size = new System.Drawing.Size(140, 17);
+            this.lbPR.TabIndex = 17;
+            this.lbPR.Text = "Ponto De Referencia";
             // 
-            // textBox7
+            // txtPR
             // 
-            this.textBox7.Location = new System.Drawing.Point(548, 241);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(132, 23);
-            this.textBox7.TabIndex = 15;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.txtPR.Location = new System.Drawing.Point(433, 189);
+            this.txtPR.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPR.Name = "txtPR";
+            this.txtPR.Size = new System.Drawing.Size(132, 23);
+            this.txtPR.TabIndex = 15;
+            this.txtPR.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
-            // label5
+            // lbCPF
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label5.Location = new System.Drawing.Point(52, 132);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 17);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "CPF";
+            this.lbCPF.AutoSize = true;
+            this.lbCPF.BackColor = System.Drawing.Color.Transparent;
+            this.lbCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCPF.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.lbCPF.Location = new System.Drawing.Point(52, 132);
+            this.lbCPF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCPF.Name = "lbCPF";
+            this.lbCPF.Size = new System.Drawing.Size(34, 17);
+            this.lbCPF.TabIndex = 18;
+            this.lbCPF.Text = "CPF";
             // 
-            // maskedTextBox1
+            // lbCEP
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(189, 123);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.maskedTextBox1.Mask = "000.999.999-99";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(132, 23);
-            this.maskedTextBox1.TabIndex = 19;
-            this.toolTip1.SetToolTip(this.maskedTextBox1, "Informe o CPF");
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(548, 123);
-            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.maskedTextBox2.Mask = "99.999-999";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(132, 23);
-            this.maskedTextBox2.TabIndex = 21;
-            this.toolTip1.SetToolTip(this.maskedTextBox2, "Informe o CEP");
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label7.Location = new System.Drawing.Point(397, 132);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 17);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "CEP";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // maskedTextBox3
-            // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(548, 91);
-            this.maskedTextBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.maskedTextBox3.Mask = "(999) 0000-0000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(132, 23);
-            this.maskedTextBox3.TabIndex = 22;
-            // 
-            // treeView1
-            // 
-            this.treeView1.Location = new System.Drawing.Point(56, 343);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(4);
-            this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Node1";
-            treeNode1.Text = "Temaki Sem Arroz";
-            treeNode2.Name = "Node2";
-            treeNode2.Text = "Yakissoba Sem Pimentão";
-            treeNode3.Name = "Node4";
-            treeNode3.Text = "Terça Mania";
-            treeNode4.Name = "Node6";
-            treeNode4.Text = "Quarta Mania";
-            treeNode5.Name = "Node7";
-            treeNode5.Text = "Quinta Mania";
-            treeNode6.Name = "Node3";
-            treeNode6.Text = "Promoção Do Dia";
-            treeNode7.Name = "Node0";
-            treeNode7.Text = "Desejos do Cliente";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode7});
-            this.treeView1.Size = new System.Drawing.Size(265, 74);
-            this.treeView1.TabIndex = 23;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label8.Location = new System.Drawing.Point(52, 300);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 17);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "Outros:";
+            this.lbCEP.AutoSize = true;
+            this.lbCEP.BackColor = System.Drawing.Color.Transparent;
+            this.lbCEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCEP.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.lbCEP.Location = new System.Drawing.Point(282, 135);
+            this.lbCEP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCEP.Name = "lbCEP";
+            this.lbCEP.Size = new System.Drawing.Size(35, 17);
+            this.lbCEP.TabIndex = 20;
+            this.lbCEP.Text = "CEP";
+            this.lbCEP.Click += new System.EventHandler(this.label7_Click);
             // 
             // statusStrip1
             // 
@@ -305,7 +236,7 @@
             this.statusStrip1.Location = new System.Drawing.Point(0, 460);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(728, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(640, 22);
             this.statusStrip1.TabIndex = 25;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -327,11 +258,14 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.novoToolStripMenuItem,
+            this.alterarToolStripMenuItem,
+            this.excluirToolStripMenuItem,
             this.administradorToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(728, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(640, 24);
             this.menuStrip1.TabIndex = 26;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -347,39 +281,152 @@
             // 
             this.clienteVipToolStripMenuItem.Enabled = false;
             this.clienteVipToolStripMenuItem.Name = "clienteVipToolStripMenuItem";
-            this.clienteVipToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.clienteVipToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.clienteVipToolStripMenuItem.Text = "ClienteVip";
             this.clienteVipToolStripMenuItem.Click += new System.EventHandler(this.clienteVipToolStripMenuItem_Click);
+            // 
+            // mtxtCEP
+            // 
+            this.mtxtCEP.Location = new System.Drawing.Point(433, 126);
+            this.mtxtCEP.Margin = new System.Windows.Forms.Padding(4);
+            this.mtxtCEP.Mask = "99.999-999";
+            this.mtxtCEP.Name = "mtxtCEP";
+            this.mtxtCEP.Size = new System.Drawing.Size(132, 23);
+            this.mtxtCEP.TabIndex = 21;
+            this.toolTip1.SetToolTip(this.mtxtCEP, "Informe o CEP");
+            // 
+            // mtxtContato
+            // 
+            this.mtxtContato.Location = new System.Drawing.Point(433, 94);
+            this.mtxtContato.Margin = new System.Windows.Forms.Padding(4);
+            this.mtxtContato.Mask = "(999) 0000-0000";
+            this.mtxtContato.Name = "mtxtContato";
+            this.mtxtContato.Size = new System.Drawing.Size(132, 23);
+            this.mtxtContato.TabIndex = 22;
+            // 
+            // mtxtCPF
+            // 
+            this.mtxtCPF.Location = new System.Drawing.Point(119, 126);
+            this.mtxtCPF.Margin = new System.Windows.Forms.Padding(4);
+            this.mtxtCPF.Mask = "000.999.999-99";
+            this.mtxtCPF.Name = "mtxtCPF";
+            this.mtxtCPF.Size = new System.Drawing.Size(132, 23);
+            this.mtxtCPF.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.mtxtCPF, "Informe o CPF");
+            // 
+            // novoToolStripMenuItem
+            // 
+            this.novoToolStripMenuItem.Name = "novoToolStripMenuItem";
+            this.novoToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.novoToolStripMenuItem.Text = "Novo";
+            // 
+            // alterarToolStripMenuItem
+            // 
+            this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
+            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.alterarToolStripMenuItem.Text = "Alterar";
+            // 
+            // excluirToolStripMenuItem
+            // 
+            this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
+            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.excluirToolStripMenuItem.Text = "Excluir";
+            // 
+            // dgvDadosClientes
+            // 
+            this.dgvDadosClientes.AllowUserToAddRows = false;
+            this.dgvDadosClientes.AllowUserToDeleteRows = false;
+            this.dgvDadosClientes.AllowUserToResizeColumns = false;
+            this.dgvDadosClientes.AllowUserToResizeRows = false;
+            this.dgvDadosClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDadosClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDadosClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDadosClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nomeCliente,
+            this.Contato,
+            this.cep,
+            this.Bairro,
+            this.endereco,
+            this.CPF});
+            this.dgvDadosClientes.Location = new System.Drawing.Point(23, 284);
+            this.dgvDadosClientes.MultiSelect = false;
+            this.dgvDadosClientes.Name = "dgvDadosClientes";
+            this.dgvDadosClientes.ReadOnly = true;
+            this.dgvDadosClientes.RowHeadersVisible = false;
+            this.dgvDadosClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvDadosClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDadosClientes.Size = new System.Drawing.Size(593, 173);
+            this.dgvDadosClientes.TabIndex = 27;
+            this.dgvDadosClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDadosClientes_CellContentClick);
+            // 
+            // nomeCliente
+            // 
+            this.nomeCliente.HeaderText = "Nome Cliente";
+            this.nomeCliente.Name = "nomeCliente";
+            this.nomeCliente.ReadOnly = true;
+            this.nomeCliente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Contato
+            // 
+            this.Contato.HeaderText = "Contato";
+            this.Contato.Name = "Contato";
+            this.Contato.ReadOnly = true;
+            // 
+            // cep
+            // 
+            this.cep.HeaderText = "CEP";
+            this.cep.Name = "cep";
+            this.cep.ReadOnly = true;
+            // 
+            // Bairro
+            // 
+            this.Bairro.HeaderText = "Bairro";
+            this.Bairro.Name = "Bairro";
+            this.Bairro.ReadOnly = true;
+            // 
+            // endereco
+            // 
+            this.endereco.HeaderText = "Endereço";
+            this.endereco.Name = "endereco";
+            this.endereco.ReadOnly = true;
+            // 
+            // CPF
+            // 
+            this.CPF.HeaderText = "CPF";
+            this.CPF.Name = "CPF";
+            this.CPF.ReadOnly = true;
+            this.CPF.Visible = false;
             // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MANIADESUSHI.GERENCIA.Properties.Resources.PisoUdeUmadeira;
-            this.ClientSize = new System.Drawing.Size(728, 482);
+            this.ClientSize = new System.Drawing.Size(640, 482);
+            this.Controls.Add(this.dgvDadosClientes);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.treeView1);
-            this.Controls.Add(this.maskedTextBox3);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lbNomeCliente);
+            this.Controls.Add(this.mtxtContato);
+            this.Controls.Add(this.mtxtCEP);
+            this.Controls.Add(this.lbCEP);
+            this.Controls.Add(this.mtxtCPF);
+            this.Controls.Add(this.lbCPF);
+            this.Controls.Add(this.lbPR);
+            this.Controls.Add(this.txtPR);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.lbNumero);
+            this.Controls.Add(this.txtRua);
+            this.Controls.Add(this.txtBairro);
+            this.Controls.Add(this.txtNumero);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.lbRua);
+            this.Controls.Add(this.lbBairro);
+            this.Controls.Add(this.lbContato);
+            this.Controls.Add(this.lbNome);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.ForeColor = System.Drawing.SystemColors.MenuText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -387,12 +434,13 @@
             this.Name = "frmClientes";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro de Clientes";
+            this.Text = "x";
             this.Load += new System.EventHandler(this.frmClientes_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDadosClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,31 +448,39 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbNomeCliente;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.Label lbNome;
+        private System.Windows.Forms.Label lbContato;
+        private System.Windows.Forms.Label lbBairro;
+        private System.Windows.Forms.Label lbRua;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.TextBox txtBairro;
+        private System.Windows.Forms.TextBox txtRua;
+        private System.Windows.Forms.Label lbNumero;
+        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Label lbPR;
+        private System.Windows.Forms.TextBox txtPR;
+        private System.Windows.Forms.Label lbCPF;
+        private System.Windows.Forms.Label lbCEP;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem administradorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteVipToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem novoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alterarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem;
+        private System.Windows.Forms.MaskedTextBox mtxtCEP;
+        private System.Windows.Forms.MaskedTextBox mtxtContato;
+        private System.Windows.Forms.MaskedTextBox mtxtCPF;
+        private System.Windows.Forms.DataGridView dgvDadosClientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contato;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bairro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endereco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
     }
 }

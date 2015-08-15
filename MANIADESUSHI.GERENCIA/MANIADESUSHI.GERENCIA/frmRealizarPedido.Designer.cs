@@ -34,7 +34,6 @@
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbTipoProduto = new System.Windows.Forms.ComboBox();
-            this.txtNomeProduto = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
@@ -43,6 +42,7 @@
             this.txtLocalizartoolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtNomeProduto = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,14 +107,6 @@
             this.cmbTipoProduto.TabIndex = 5;
             this.cmbTipoProduto.Click += new System.EventHandler(this.cmbTipoProduto_Click);
             // 
-            // txtNomeProduto
-            // 
-            this.txtNomeProduto.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtNomeProduto.Location = new System.Drawing.Point(170, 89);
-            this.txtNomeProduto.Name = "txtNomeProduto";
-            this.txtNomeProduto.Size = new System.Drawing.Size(216, 20);
-            this.txtNomeProduto.TabIndex = 6;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(230, 115);
@@ -176,6 +168,14 @@
             this.richTextBox1.TabIndex = 10;
             this.richTextBox1.Text = "";
             // 
+            // txtNomeProduto
+            // 
+            this.txtNomeProduto.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtNomeProduto.Location = new System.Drawing.Point(170, 89);
+            this.txtNomeProduto.Name = "txtNomeProduto";
+            this.txtNomeProduto.Size = new System.Drawing.Size(216, 20);
+            this.txtNomeProduto.TabIndex = 6;
+            // 
             // frmRealizarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,7 +215,6 @@
         private System.Windows.Forms.TextBox txtNomeCliente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbTipoProduto;
-        private System.Windows.Forms.TextBox txtNomeProduto;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Drawing.Printing.PrintDocument printDocument1;
@@ -224,5 +223,6 @@
         private System.Windows.Forms.ToolStripTextBox txtLocalizartoolStripTextBox1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox txtNomeProduto;
     }
 }
