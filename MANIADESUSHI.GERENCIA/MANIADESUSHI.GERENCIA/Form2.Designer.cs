@@ -74,6 +74,7 @@
             // 
             // lbNome
             // 
+            this.lbNome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbNome.AutoSize = true;
             this.lbNome.BackColor = System.Drawing.Color.Transparent;
             this.lbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -87,6 +88,7 @@
             // 
             // lbContato
             // 
+            this.lbContato.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbContato.AutoSize = true;
             this.lbContato.BackColor = System.Drawing.Color.Transparent;
             this.lbContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -100,6 +102,7 @@
             // 
             // lbBairro
             // 
+            this.lbBairro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbBairro.AutoSize = true;
             this.lbBairro.BackColor = System.Drawing.Color.Transparent;
             this.lbBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -113,6 +116,7 @@
             // 
             // lbRua
             // 
+            this.lbRua.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbRua.AutoSize = true;
             this.lbRua.BackColor = System.Drawing.Color.Transparent;
             this.lbRua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -126,6 +130,7 @@
             // 
             // txtNome
             // 
+            this.txtNome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNome.Location = new System.Drawing.Point(246, 81);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Name = "txtNome";
@@ -134,6 +139,7 @@
             // 
             // txtNumero
             // 
+            this.txtNumero.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNumero.Location = new System.Drawing.Point(246, 176);
             this.txtNumero.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumero.Name = "txtNumero";
@@ -142,6 +148,7 @@
             // 
             // txtBairro
             // 
+            this.txtBairro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBairro.Location = new System.Drawing.Point(246, 144);
             this.txtBairro.Margin = new System.Windows.Forms.Padding(4);
             this.txtBairro.Name = "txtBairro";
@@ -150,6 +157,7 @@
             // 
             // txtRua
             // 
+            this.txtRua.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRua.Location = new System.Drawing.Point(246, 207);
             this.txtRua.Margin = new System.Windows.Forms.Padding(4);
             this.txtRua.Name = "txtRua";
@@ -158,6 +166,7 @@
             // 
             // lbNumero
             // 
+            this.lbNumero.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbNumero.AutoSize = true;
             this.lbNumero.BackColor = System.Drawing.Color.Transparent;
             this.lbNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -171,6 +180,7 @@
             // 
             // lbPR
             // 
+            this.lbPR.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbPR.AutoSize = true;
             this.lbPR.BackColor = System.Drawing.Color.Transparent;
             this.lbPR.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -184,6 +194,7 @@
             // 
             // txtPR
             // 
+            this.txtPR.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPR.Location = new System.Drawing.Point(246, 239);
             this.txtPR.Margin = new System.Windows.Forms.Padding(4);
             this.txtPR.Name = "txtPR";
@@ -192,6 +203,7 @@
             // 
             // lbCPF
             // 
+            this.lbCPF.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbCPF.AutoSize = true;
             this.lbCPF.BackColor = System.Drawing.Color.Transparent;
             this.lbCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,6 +217,7 @@
             // 
             // lbCEP
             // 
+            this.lbCEP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbCEP.AutoSize = true;
             this.lbCEP.BackColor = System.Drawing.Color.Transparent;
             this.lbCEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -218,6 +231,7 @@
             // 
             // mtxtCEP
             // 
+            this.mtxtCEP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtCEP.Location = new System.Drawing.Point(560, 147);
             this.mtxtCEP.Margin = new System.Windows.Forms.Padding(4);
             this.mtxtCEP.Mask = "99.999-999";
@@ -228,6 +242,7 @@
             // 
             // mtxtCPF
             // 
+            this.mtxtCPF.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtCPF.Location = new System.Drawing.Point(246, 113);
             this.mtxtCPF.Margin = new System.Windows.Forms.Padding(4);
             this.mtxtCPF.Mask = "000.999.999-99";
@@ -312,6 +327,7 @@
             // 
             // mtxtContato
             // 
+            this.mtxtContato.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtContato.Location = new System.Drawing.Point(560, 113);
             this.mtxtContato.Margin = new System.Windows.Forms.Padding(4);
             this.mtxtContato.Mask = "(999) 0000-0000";
@@ -388,45 +404,68 @@
             // 
             // btnNovo
             // 
-            this.btnNovo.BackgroundImage = global::MANIADESUSHI.GERENCIA.Properties.Resources.add;
+            this.btnNovo.BackColor = System.Drawing.SystemColors.Control;
             this.btnNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNovo.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnNovo.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnNovo.Location = new System.Drawing.Point(23, 359);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(46, 37);
+            this.btnNovo.Size = new System.Drawing.Size(73, 37);
             this.btnNovo.TabIndex = 9;
-            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnRemover
             // 
-            this.btnRemover.BackgroundImage = global::MANIADESUSHI.GERENCIA.Properties.Resources.remover;
+            this.btnRemover.BackColor = System.Drawing.SystemColors.Control;
             this.btnRemover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRemover.Location = new System.Drawing.Point(179, 359);
+            this.btnRemover.Enabled = false;
+            this.btnRemover.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.btnRemover.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.btnRemover.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnRemover.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.btnRemover.Location = new System.Drawing.Point(260, 359);
             this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(46, 37);
+            this.btnRemover.Size = new System.Drawing.Size(73, 37);
             this.btnRemover.TabIndex = 12;
-            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Text = "Cancelar";
+            this.btnRemover.UseVisualStyleBackColor = false;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click_1);
             // 
             // btnAlterar
             // 
-            this.btnAlterar.BackgroundImage = global::MANIADESUSHI.GERENCIA.Properties.Resources.update;
+            this.btnAlterar.BackColor = System.Drawing.SystemColors.Control;
             this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAlterar.Location = new System.Drawing.Point(75, 359);
+            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.btnAlterar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.btnAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.btnAlterar.Location = new System.Drawing.Point(102, 359);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(46, 37);
+            this.btnAlterar.Size = new System.Drawing.Size(73, 37);
             this.btnAlterar.TabIndex = 10;
-            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnSalvar
             // 
-            this.btnSalvar.BackgroundImage = global::MANIADESUSHI.GERENCIA.Properties.Resources.save;
+            this.btnSalvar.BackColor = System.Drawing.SystemColors.Control;
             this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSalvar.Location = new System.Drawing.Point(127, 359);
+            this.btnSalvar.Enabled = false;
+            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.btnSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.btnSalvar.Location = new System.Drawing.Point(181, 359);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(46, 37);
+            this.btnSalvar.Size = new System.Drawing.Size(73, 37);
             this.btnSalvar.TabIndex = 11;
-            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // frmClientes
@@ -460,14 +499,15 @@
             this.Controls.Add(this.lbNome);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmClientes";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "x";
+            this.Text = "Cadastrar Cliente";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmClientes_FormClosing);
             this.Load += new System.EventHandler(this.frmClientes_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
