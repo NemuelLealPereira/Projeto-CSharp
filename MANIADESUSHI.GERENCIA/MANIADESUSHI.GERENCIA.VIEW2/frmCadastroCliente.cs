@@ -21,7 +21,22 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            insererAdress();
+            insererClient();
 
+           
+
+        }
+      
+
+        private void insererAdress()
+        {
+            Form objfrmEnregistreAdresse = new frmEnregistrerAdresse();
+            objfrmEnregistreAdresse.Show();
+        }
+
+        public void insererClient()
+        {
             mtxtContato1.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals; // tira a formatação
             string vmtxtContato1 = mtxtContato1.Text; //texto não formatado
             mtxtContato1.TextMaskFormat = MaskFormat.IncludePromptAndLiterals; // retorna a formatação
@@ -35,7 +50,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             mtxtContato3.TextMaskFormat = MaskFormat.IncludePromptAndLiterals; // retorna a formatação
 
             Cliente objCliente = new Cliente(txtNom.Text, txtEmail.Text, vmtxtContato1, vmtxtContato2, vmtxtContato3);
-            
+
             LaConnexion objConectar = new LaConnexion(Properties.Settings.Default.ManiaDeSushiConnectionString);
 
             try
@@ -52,8 +67,9 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
                 MessageBox.Show("Impossível Inserir este Cliente!. Verifique os dados");
                 throw;
             }
-            
         }
+
+
 
     }
 }
