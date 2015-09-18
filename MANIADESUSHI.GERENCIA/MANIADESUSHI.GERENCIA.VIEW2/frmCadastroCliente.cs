@@ -14,6 +14,8 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
 {
     public partial class frmCadastroCliente : Form
     {
+        int code;
+
         public frmCadastroCliente()
         {
             InitializeComponent();
@@ -22,16 +24,17 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
         private void btnOK_Click(object sender, EventArgs e)
         {
             insererClient();
+            insererAdress();
         }
       
 
         private void insererAdress()
         {
-            Form objfrmEnregistreAdresse = new frmEnregistrerAdresse();
+            Form objfrmEnregistreAdresse = new frmEnregistrerAdresse(this.code);
             objfrmEnregistreAdresse.Show();
         }
 
-        public void insererClient()
+        public int insererClient()
         {
             mtxtContato1.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals; // tira a formatação
             string vmtxtContato1 = mtxtContato1.Text; //texto não formatado
@@ -53,10 +56,13 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             {
                 objConectar.ouvertConnexion();
 
-                objConectar.inserer("tb_cliente", objCliente);
+                objConectar.insererClient("tb_cliente", objCliente);
+                
+                this.code = objConectar.retounerCodeClient("tb_cliente", objCliente);
 
                 objConectar.fermerLaConnexion();
 
+                return this.code;
             }
             catch (Exception)
             {

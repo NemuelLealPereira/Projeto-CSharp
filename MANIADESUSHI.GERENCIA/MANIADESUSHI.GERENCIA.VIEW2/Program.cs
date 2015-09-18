@@ -16,7 +16,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEnregistrerAdresse());
+            Application.Run(new frmCadastroCliente());
         }
     }
 }

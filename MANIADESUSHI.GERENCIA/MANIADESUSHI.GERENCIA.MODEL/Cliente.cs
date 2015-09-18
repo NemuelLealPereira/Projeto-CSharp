@@ -36,11 +36,6 @@ namespace MANIADESUSHI.GERENCIA.MODEL
 
         }
 
-        public Cliente()
-        {
-            // TODO: Complete member initialization
-        }
-        
         public string Nome
         {
             get { return nome; }

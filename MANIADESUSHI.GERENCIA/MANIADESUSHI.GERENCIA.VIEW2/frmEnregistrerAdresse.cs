@@ -13,24 +13,29 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
 {
     public partial class frmEnregistrerAdresse : Form
     {
-        public frmEnregistrerAdresse()
+        private int codeClient;
+        private int codeLogradouro;
+
+        public frmEnregistrerAdresse(int codeClient)
         {
             InitializeComponent();
+            this.codeClient = codeClient;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             ensererAdresse();
+
         }
 
-        private void ensererAdresse()
+        private int ensererAdresse()
         {
 
             mtxtCep.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals; // Supprimer le formatage
             string vmtxtCep = mtxtCep.Text; //Le texte n'est pas formatage
             mtxtCep.TextMaskFormat = MaskFormat.IncludePromptAndLiterals; // retourner le formatage
-            
-            Adresse objAdresse = new Adresse(vmtxtCep, cmbCidade.SelectedItem, cmbUF.SelectedItem, txtBairro.Text, txtTipoLogradouro.Text, txtLogradouro.Text, txtNumero.Text, txtComplemento.Text);
+
+            Adresse objAdresse = new Adresse(vmtxtCep, cmbCidade.SelectedItem, cmbUF.SelectedItem, txtBairro.Text, txtTipoLogradouro.Text, txtLogradouro.Text, txtNumero.Text, txtComplemento.Text, codeClient);
 
             LaConnexion objConectar = new LaConnexion(Properties.Settings.Default.ManiaDeSushiConnectionString);
 
@@ -38,9 +43,16 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             {
                 objConectar.ouvertConnexion();
 
-                objConectar.inserer("tb_logradouro","tb_endereco", objAdresse);
+                objConectar.insererLogradouro("tb_logradouro", objAdresse);
+                
+                this.codeLogradouro = objConectar.retounerCodeLogradouro("tb_logradouro", objAdresse);
+
+                objConectar.insererAdresse("tb_endereco", objAdresse, this.codeLogradouro);
 
                 objConectar.fermerLaConnexion();
+
+                return this.codeLogradouro;
+
 
             }
             catch (Exception)

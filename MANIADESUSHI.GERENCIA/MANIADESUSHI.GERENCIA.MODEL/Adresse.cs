@@ -15,8 +15,9 @@ namespace MANIADESUSHI.GERENCIA.MODEL
         private string logradouro;
         private string numero;
         private string complemento;
+        private int codeClient;
 
-        public Adresse(string cep, object cidade, object uf, string bairro, string tipoLogradouro, string logradouro, string numero, string complemento)
+        public Adresse(string cep, object cidade, object uf, string bairro, string tipoLogradouro, string logradouro, string numero, string complemento, int codeClient)
         {
             this.cep = cep;
             this.cidade = cidade;
@@ -26,6 +27,7 @@ namespace MANIADESUSHI.GERENCIA.MODEL
             this.logradouro = logradouro;
             this.numero = numero;
             this.complemento = complemento;
+            this.codeClient = codeClient;
         }
         
         public string Cep
@@ -75,7 +77,13 @@ namespace MANIADESUSHI.GERENCIA.MODEL
             get { return complemento; }
             set { complemento = value; }
         }
-        
+
+        public int CodeClient
+        {
+            get { return codeClient; }
+            set { codeClient = value; }
+        }
+
 
         
     }
