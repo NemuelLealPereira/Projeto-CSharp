@@ -21,7 +21,7 @@ namespace MANIADESUSHI.GERENCIA.MODEL
         /// <summary>
         /// objet pour la connexion
         /// </summary>
-        private SqlConnection objConexaoSqlClient = null;
+        private SqlConnection objConexao = null;
 
         /// <summary>
         /// Connexion avec donnés de base
@@ -39,7 +39,7 @@ namespace MANIADESUSHI.GERENCIA.MODEL
         public void ouvertConnexion()
         {
             // objet pour la connexion avec le Base de données Sql Server
-            objConexaoSqlClient = new SqlConnection(stringDeLaConnexion);
+            objConexao = new SqlConnection(stringDeLaConnexion);
 
             //String de la connexion pour connectez avec le Base de donnés Sql Server
             //objConexaoSqlClient.ConnectionString = stringDeLaConnexion;
@@ -47,7 +47,7 @@ namespace MANIADESUSHI.GERENCIA.MODEL
             try
             {
                 // ouvert la connexion.
-                objConexaoSqlClient.Open();
+                objConexao.Open();
 
             }
             catch (Exception)
@@ -61,11 +61,11 @@ namespace MANIADESUSHI.GERENCIA.MODEL
         /// </summary>
         public void fermerLaConnexion()
         {
-                objConexaoSqlClient.Close();
+                objConexao.Close();
         }
         
         /// <summary>
-        /// Il a inséré un donné dans le Base de données
+        /// Il a inséré un donné de client dans le Base de données
         /// </summary>
         /// <param name="tableBD">table du Base de donnés</param>
         public void inserer(string tableBD, Cliente objCliente)
@@ -80,9 +80,39 @@ namespace MANIADESUSHI.GERENCIA.MODEL
 
                 objComandoSQL.CommandType = CommandType.Text;
 
-                objComandoSQL.Connection = objConexaoSqlClient;
+                objComandoSQL.Connection = objConexao;
 
                 objComandoSQL.ExecuteNonQuery();
+
+            }
+            catch (Exception) 
+            {
+                throw;
+            }
+
+        }
+
+        /// <summary>
+        /// Il a inséré un donné du Adresse du client dans le Base de données
+        /// </summary>
+        /// <param name="tableBD">table du Base de donnés</param>
+        public void inserer(string tableBD, string tableBD2, Adresse objAdresse) 
+        {
+            
+            try
+            {
+                // Objet pour l'exécution d'une commande SQL.
+                SqlCommand objComandoSQL = new SqlCommand();
+
+                objComandoSQL.CommandText = "INSERT INTO " + tableBD + " VALUES ('" + objAdresse.Cep + "','" + objAdresse.UF + "','" + objAdresse.Cidade + "','" + objAdresse.TipoLogradouro + "','" + objAdresse.Logradouro + "','" + objAdresse.Bairro + "')";
+
+                objComandoSQL.CommandType = CommandType.Text;
+
+                objComandoSQL.Connection = objConexao;
+
+                objComandoSQL.ExecuteNonQuery();
+
+                
 
                 //// Il interprète le type de commande SQL.
                 //objComandoSQL.CommandType = CommandType.Text;
@@ -102,13 +132,12 @@ namespace MANIADESUSHI.GERENCIA.MODEL
                 //txtTipoLogradouro.Text = DR.GetString(3);
                 //textLogradouro.Text = DR.GetString(4);
             }
-            catch (Exception) 
+            catch (Exception)
             {
                 throw;
             }
-
+ 
         }
-        
     }
 }
 

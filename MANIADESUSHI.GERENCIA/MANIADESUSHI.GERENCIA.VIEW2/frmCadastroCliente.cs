@@ -21,11 +21,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            insererAdress();
             insererClient();
-
-           
-
         }
       
 
