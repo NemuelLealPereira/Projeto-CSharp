@@ -14,7 +14,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
 {
     public partial class frmCadastroCliente : Form
     {
-        int code;
+        private int code;
 
         public frmCadastroCliente()
         {
