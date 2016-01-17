@@ -34,7 +34,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             objfrmEnregistreAdresse.Show();
         }
 
-        public int insererClient()
+        public void insererClient()
         {
             mtxtContato1.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals; // tira a formatação
             string vmtxtContato1 = mtxtContato1.Text; //texto não formatado
@@ -62,7 +62,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
 
                 objConectar.fermerLaConnexion();
 
-                return this.code;
+                //return this.code;
             }
             catch (Exception)
             {

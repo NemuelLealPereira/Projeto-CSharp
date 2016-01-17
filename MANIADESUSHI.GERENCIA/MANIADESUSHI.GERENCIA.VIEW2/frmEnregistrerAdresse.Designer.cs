@@ -108,7 +108,7 @@
             this.cmbCidade.Location = new System.Drawing.Point(155, 121);
             this.cmbCidade.Name = "cmbCidade";
             this.cmbCidade.Size = new System.Drawing.Size(100, 21);
-            this.cmbCidade.TabIndex = 2;
+            this.cmbCidade.TabIndex = 3;
             // 
             // cmbUF
             // 
@@ -118,7 +118,7 @@
             this.cmbUF.Location = new System.Drawing.Point(155, 94);
             this.cmbUF.Name = "cmbUF";
             this.cmbUF.Size = new System.Drawing.Size(100, 21);
-            this.cmbUF.TabIndex = 3;
+            this.cmbUF.TabIndex = 2;
             // 
             // lblLogradouro
             // 
@@ -175,6 +175,7 @@
             this.mtxtCep.Name = "mtxtCep";
             this.mtxtCep.Size = new System.Drawing.Size(100, 20);
             this.mtxtCep.TabIndex = 1;
+            this.mtxtCep.Leave += new System.EventHandler(this.mtxtCep_Leave);
             // 
             // txtBairro
             // 

@@ -28,7 +28,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
 
         }
 
-        private int ensererAdresse()
+        private void ensererAdresse()
         {
 
             mtxtCep.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals; // Supprimer le formatage
@@ -51,7 +51,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
 
                 objConectar.fermerLaConnexion();
 
-                return this.codeLogradouro;
+                //return this.codeLogradouro;
 
 
             }
@@ -61,6 +61,13 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
                 throw;
             }
         }
+
+        private void mtxtCep_Leave(object sender, EventArgs e)
+        {
+
+            MessageBox.Show("Verificar CEP");
+        }
+
 
 
     }
