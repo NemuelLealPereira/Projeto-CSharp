@@ -13,32 +13,45 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
 {
     public partial class frmEnregistrerAdresse : Form
     {
+
+
         private int codeClient;
         private int codeLogradouro;
+        LaConnexion objConectar = new LaConnexion(Properties.Settings.Default.ManiaDeSushiConnectionString);
+        List<string> registerLogradouro = new List<string>();
+        private string vmtxtCep;
+
 
         public frmEnregistrerAdresse(int codeClient)
         {
             InitializeComponent();
+
             this.codeClient = codeClient;
+            
+            this.cmbUF.SelectedItem = "BA";
+            this.cmbUF.Enabled = false;
+
+            this.cmbCidade.SelectedItem = "Salvador";
+            this.cmbCidade.Enabled = false;
         }
+
+
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             ensererAdresse();
-
         }
+
+
 
         private void ensererAdresse()
         {
-
             mtxtCep.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals; // Supprimer le formatage
-            string vmtxtCep = mtxtCep.Text; //Le texte n'est pas formatage
+            vmtxtCep = mtxtCep.Text; //Le texte n'est pas formatage
             mtxtCep.TextMaskFormat = MaskFormat.IncludePromptAndLiterals; // retourner le formatage
 
             Adresse objAdresse = new Adresse(vmtxtCep, cmbCidade.SelectedItem, cmbUF.SelectedItem, txtBairro.Text, txtTipoLogradouro.Text, txtLogradouro.Text, txtNumero.Text, txtComplemento.Text, codeClient);
-
-            LaConnexion objConectar = new LaConnexion(Properties.Settings.Default.ManiaDeSushiConnectionString);
-
+            
             try
             {
                 objConectar.ouvertConnexion();
@@ -51,22 +64,95 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
 
                 objConectar.fermerLaConnexion();
 
-                //return this.codeLogradouro;
-
-
             }
             catch (Exception)
             {
-                MessageBox.Show("Impossível Inserir este Cliente!. Verifique os dados");
+                MessageBox.Show("Impossível Inserir este Endereço!. Contate o Desenvolvedor");
                 throw;
             }
         }
 
+
+
         private void mtxtCep_Leave(object sender, EventArgs e)
         {
 
-            MessageBox.Show("Verificar CEP");
+            mtxtCep.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals; // Supprimer le formatage
+            vmtxtCep = mtxtCep.Text; //Le texte n'est pas formatage
+            mtxtCep.TextMaskFormat = MaskFormat.IncludePromptAndLiterals; // retourner le formatage
+
+            try
+            {
+                objConectar.ouvertConnexion();
+
+                registerLogradouro = objConectar.returnerLogradouro("tb_logradouro", vmtxtCep);
+
+                objConectar.fermerLaConnexion();
+
+                if (!remplirFormulaire())
+                {
+                    if (!txtLogradouro.Enabled)
+                    {
+                        permettreChamps();
+                        nettoyerFormulaire();
+                    }
+
+                    this.Show();
+
+                   
+
+                }
+
+                
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Impossível Inserir este Endereço!. Contate o Desenvolvedor");
+                throw;
+            }
+
         }
+
+
+
+        private bool remplirFormulaire()
+        {
+            if (!registerLogradouro.Count.Equals(0))
+            {
+                cmbUF.SelectedItem = registerLogradouro[1];
+               
+                cmbCidade.SelectedItem = registerLogradouro[2];
+               
+                txtTipoLogradouro.Text = registerLogradouro[3];
+                txtTipoLogradouro.Enabled = false;
+
+                txtLogradouro.Text = registerLogradouro[4];
+                txtLogradouro.Enabled = false;
+
+                txtBairro.Text = registerLogradouro[5];
+                txtBairro.Enabled = false;
+
+                return true;
+            }
+            return false;
+        }
+
+        private void permettreChamps()
+        {
+
+            this.txtTipoLogradouro.Enabled = true;
+            this.txtLogradouro.Enabled = true;
+            this.txtBairro.Enabled = true;
+        }
+
+        private void nettoyerFormulaire()
+        {
+            this.txtTipoLogradouro.Text = "";
+            this.txtLogradouro.Text = "";
+            this.txtBairro.Text = "";
+        }
+        
 
 
 

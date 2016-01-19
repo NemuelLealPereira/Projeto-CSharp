@@ -219,5 +219,54 @@ namespace MANIADESUSHI.GERENCIA.MODEL
                 throw;
             }
         }
+
+        public List<string> returnerLogradouro(string tableBD, string cep)
+        {
+            try
+            {
+                List<string> registerLogradouro = new List<string>();
+
+                SqlCommand objComandoSQL = new SqlCommand();
+
+                objComandoSQL.CommandText = "SELECT log_cep, log_uf, log_cidade, log_tipo_logradouro, log_logradouro, tb_frete_fre_bairro FROM " + tableBD + " WHERE log_cep = '" + cep + "'";
+
+                objComandoSQL.CommandType = CommandType.Text;
+
+                objComandoSQL.Connection = objConexao;
+
+                //// Objet créé pour lire les donné de base. Il ne besoin pas de faire la instaciation
+                SqlDataReader DR;
+
+                // Effectue la lecture de retourner un objet SqlDataReader
+                DR = objComandoSQL.ExecuteReader();
+
+                // faire la lecture du première register et aprés saut pour la prochaine ligne.
+
+
+                if (DR.Read())
+                {
+                    registerLogradouro.Add(DR.GetString(0));
+                    registerLogradouro.Add(DR.GetString(1));
+                    registerLogradouro.Add(DR.GetString(2));
+                    registerLogradouro.Add(DR.GetString(3));
+                    registerLogradouro.Add(DR.GetString(4));
+                    registerLogradouro.Add(DR.GetString(5));
+                }
+
+
+                DR.Close();
+
+                return registerLogradouro;
+                
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
     }
 }
