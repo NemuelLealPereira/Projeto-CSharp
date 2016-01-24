@@ -15,7 +15,7 @@
         {
             if (disposing && (components != null))
             {
-                components.Dispose();
+                //components.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -39,12 +39,13 @@
             this.mtxtContato1 = new System.Windows.Forms.MaskedTextBox();
             this.lbContato1 = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
+            this.dgvCliente = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // txtEmail
             // 
-            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtEmail.Location = new System.Drawing.Point(115, 101);
+            this.txtEmail.Location = new System.Drawing.Point(115, 92);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(120, 20);
@@ -52,8 +53,7 @@
             // 
             // txtNom
             // 
-            this.txtNom.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNom.Location = new System.Drawing.Point(115, 73);
+            this.txtNom.Location = new System.Drawing.Point(112, 28);
             this.txtNom.Margin = new System.Windows.Forms.Padding(4);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(285, 20);
@@ -61,12 +61,11 @@
             // 
             // lbEmail
             // 
-            this.lbEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbEmail.AutoSize = true;
             this.lbEmail.BackColor = System.Drawing.Color.Transparent;
             this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEmail.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.lbEmail.Location = new System.Drawing.Point(31, 104);
+            this.lbEmail.Location = new System.Drawing.Point(31, 93);
             this.lbEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -76,12 +75,11 @@
             // 
             // lbNome
             // 
-            this.lbNome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbNome.AutoSize = true;
             this.lbNome.BackColor = System.Drawing.Color.Transparent;
             this.lbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNome.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.lbNome.Location = new System.Drawing.Point(31, 79);
+            this.lbNome.Location = new System.Drawing.Point(28, 34);
             this.lbNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(45, 17);
@@ -90,8 +88,7 @@
             // 
             // mtxtContato3
             // 
-            this.mtxtContato3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mtxtContato3.Location = new System.Drawing.Point(115, 185);
+            this.mtxtContato3.Location = new System.Drawing.Point(115, 176);
             this.mtxtContato3.Margin = new System.Windows.Forms.Padding(4);
             this.mtxtContato3.Mask = "(999) 0000-0000";
             this.mtxtContato3.Name = "mtxtContato3";
@@ -100,12 +97,11 @@
             // 
             // lbContato3
             // 
-            this.lbContato3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbContato3.AutoSize = true;
             this.lbContato3.BackColor = System.Drawing.Color.Transparent;
             this.lbContato3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbContato3.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.lbContato3.Location = new System.Drawing.Point(31, 188);
+            this.lbContato3.Location = new System.Drawing.Point(28, 177);
             this.lbContato3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbContato3.Name = "lbContato3";
             this.lbContato3.Size = new System.Drawing.Size(69, 17);
@@ -114,8 +110,7 @@
             // 
             // mtxtContato2
             // 
-            this.mtxtContato2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mtxtContato2.Location = new System.Drawing.Point(115, 157);
+            this.mtxtContato2.Location = new System.Drawing.Point(115, 148);
             this.mtxtContato2.Margin = new System.Windows.Forms.Padding(4);
             this.mtxtContato2.Mask = "(999) 0000-0000";
             this.mtxtContato2.Name = "mtxtContato2";
@@ -124,12 +119,11 @@
             // 
             // lbContato2
             // 
-            this.lbContato2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbContato2.AutoSize = true;
             this.lbContato2.BackColor = System.Drawing.Color.Transparent;
             this.lbContato2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbContato2.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.lbContato2.Location = new System.Drawing.Point(30, 160);
+            this.lbContato2.Location = new System.Drawing.Point(28, 151);
             this.lbContato2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbContato2.Name = "lbContato2";
             this.lbContato2.Size = new System.Drawing.Size(69, 17);
@@ -138,8 +132,7 @@
             // 
             // mtxtContato1
             // 
-            this.mtxtContato1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mtxtContato1.Location = new System.Drawing.Point(115, 129);
+            this.mtxtContato1.Location = new System.Drawing.Point(115, 120);
             this.mtxtContato1.Margin = new System.Windows.Forms.Padding(4);
             this.mtxtContato1.Mask = "(999) 0000-0000";
             this.mtxtContato1.Name = "mtxtContato1";
@@ -148,12 +141,11 @@
             // 
             // lbContato1
             // 
-            this.lbContato1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbContato1.AutoSize = true;
             this.lbContato1.BackColor = System.Drawing.Color.Transparent;
             this.lbContato1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbContato1.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.lbContato1.Location = new System.Drawing.Point(31, 132);
+            this.lbContato1.Location = new System.Drawing.Point(28, 123);
             this.lbContato1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbContato1.Name = "lbContato1";
             this.lbContato1.Size = new System.Drawing.Size(69, 17);
@@ -162,7 +154,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(378, 169);
+            this.btnOK.Location = new System.Drawing.Point(435, 173);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 45;
@@ -170,11 +162,24 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // dgvCliente
+            // 
+            this.dgvCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCliente.Location = new System.Drawing.Point(12, 222);
+            this.dgvCliente.Name = "dgvCliente";
+            this.dgvCliente.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dgvCliente.Size = new System.Drawing.Size(780, 238);
+            this.dgvCliente.TabIndex = 46;
+            // 
             // frmCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 250);
+            this.ClientSize = new System.Drawing.Size(804, 472);
+            this.Controls.Add(this.dgvCliente);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.mtxtContato3);
             this.Controls.Add(this.lbContato3);
@@ -188,6 +193,8 @@
             this.Controls.Add(this.lbNome);
             this.Name = "frmCadastroCliente";
             this.Text = "Cadastro Cliente";
+            this.Load += new System.EventHandler(this.frmCadastroCliente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,6 +213,7 @@
         private System.Windows.Forms.MaskedTextBox mtxtContato1;
         private System.Windows.Forms.Label lbContato1;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.DataGridView dgvCliente;
     }
 }
 

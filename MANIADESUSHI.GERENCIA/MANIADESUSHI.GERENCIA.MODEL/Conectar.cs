@@ -108,19 +108,16 @@ namespace MANIADESUSHI.GERENCIA.MODEL
 
                 objComandoSQL.Connection = objConexao;
 
-                objComandoSQL.ExecuteNonQuery();
-
                 //// Objet créé pour lire les donné de base
                 SqlDataReader DR;
 
                 // Effectue la lecture de retourner un objet SqlDataReader
                 DR = objComandoSQL.ExecuteReader();
-
-                DR.Read();
-
+                
                 code = DR.GetInt32(0);
 
                 DR.Close();
+                
                 return code;
 
             }
@@ -175,8 +172,6 @@ namespace MANIADESUSHI.GERENCIA.MODEL
 
                 objComandoSQL.Connection = objConexao;
 
-                objComandoSQL.ExecuteNonQuery();
-
                 //// Objet créé pour lire les donné de base
                 SqlDataReader DR;
 
@@ -188,6 +183,7 @@ namespace MANIADESUSHI.GERENCIA.MODEL
                 code = DR.GetInt32(0);
 
                 DR.Close();
+
                 return code;
 
             }
@@ -266,6 +262,46 @@ namespace MANIADESUSHI.GERENCIA.MODEL
                 throw;
             }
 
+        }
+
+        public DataTable selectionnerTable(string tableBD)
+        {
+            try
+            {
+
+                SqlCommand objComandoSQL = new SqlCommand();
+
+                objComandoSQL.CommandText = "SELECT * FROM " + tableBD;
+
+                objComandoSQL.CommandType = CommandType.Text;
+
+                objComandoSQL.Connection = objConexao;
+
+                //// Objet créé pour lire les donné de base. Il ne besoin pas de faire la instaciation
+                DataTable dt = new DataTable();
+                SqlDataReader DR;
+
+                // Effectue la lecture de retourner un objet SqlDataReader
+                DR = objComandoSQL.ExecuteReader();
+                DR.Read();
+                // faire la lecture du première register et aprés saut pour la prochaine ligne.
+
+                
+
+                dt.Load(DR);
+
+                DR.Close();
+
+                return dt;
+
+                
+        
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
     }

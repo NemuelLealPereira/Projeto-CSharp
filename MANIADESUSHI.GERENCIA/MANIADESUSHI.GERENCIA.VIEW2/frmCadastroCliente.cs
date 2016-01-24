@@ -109,6 +109,34 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
 
 
         }
+
+        private void frmCadastroCliente_Load(object sender, EventArgs e)
+        {
+            LaConnexion objConectar = new LaConnexion(Properties.Settings.Default.ManiaDeSushiConnectionString);
+
+            try
+            {
+                objConectar.ouvertConnexion();
+                                
+                DataTable dt = new DataTable();
+                dt = objConectar.selectionnerTable("tb_cliente");
+                //dgvCliente = new DataGridView(); il ne peut pas utilizer new
+                dgvCliente.DataSource = dt;
+                dgvCliente.Refresh();
+
+                    
+
+                objConectar.fermerLaConnexion();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Impossível Inserir este Cliente!. Verifique os dados");
+                throw;
+            }
+            
+        }
+
+
         
     }
 }
