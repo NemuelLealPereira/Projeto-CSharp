@@ -124,6 +124,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
                 dgvCliente.DataSource = dt;
                 dgvCliente.Refresh();
 
+
                     
 
                 objConectar.fermerLaConnexion();
