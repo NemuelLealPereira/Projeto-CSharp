@@ -17,8 +17,8 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
 
         private int codeClient;
         private string vmtxtContato1;
-
-
+        private DataTable dt = new DataTable();
+        private List<string> client = new List<string>();
 
         public frmCadastroCliente()
         {
@@ -117,17 +117,16 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             try
             {
                 objConectar.ouvertConnexion();
-                                
-                DataTable dt = new DataTable();
+                //DataTable dt = new DataTable();
                 dt = objConectar.selectionnerTable("tb_cliente");
+                objConectar.fermerLaConnexion();
                 //dgvCliente = new DataGridView(); il ne peut pas utilizer new
+                
                 dgvCliente.DataSource = dt;
                 dgvCliente.Refresh();
-
-
-                    
-
-                objConectar.fermerLaConnexion();
+                
+                chercherClient();
+                
             }
             catch (Exception)
             {
@@ -135,6 +134,31 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
                 throw;
             }
             
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            client.FindAll(match);
+                
+
+        }
+
+        private bool match(string obj)
+        {
+            if (obj.Contains(txtNom.Text))
+                return true;
+            return false;
+        }
+
+
+        private List<string> chercherClient()
+        {
+            for (int i = 0; i < dgvCliente.Rows.Count; i++)
+            {
+                client.Add(Convert.ToString(dgvCliente[1, i].Value));
+            }
+
+            return client;
         }
 
 

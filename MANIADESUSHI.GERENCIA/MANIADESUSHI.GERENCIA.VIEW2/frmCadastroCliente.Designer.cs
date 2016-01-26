@@ -40,6 +40,7 @@
             this.lbContato1 = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.btn_buscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(112, 28);
+            this.txtNom.Location = new System.Drawing.Point(115, 31);
             this.txtNom.Margin = new System.Windows.Forms.Padding(4);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(285, 20);
@@ -181,11 +182,22 @@
             this.dgvCliente.Size = new System.Drawing.Size(780, 238);
             this.dgvCliente.TabIndex = 46;
             // 
+            // btn_buscar
+            // 
+            this.btn_buscar.Location = new System.Drawing.Point(435, 31);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(75, 20);
+            this.btn_buscar.TabIndex = 47;
+            this.btn_buscar.Text = "Buscar";
+            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            // 
             // frmCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 472);
+            this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.dgvCliente);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.mtxtContato3);
@@ -221,6 +233,7 @@
         private System.Windows.Forms.Label lbContato1;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.DataGridView dgvCliente;
+        private System.Windows.Forms.Button btn_buscar;
     }
 }
 
