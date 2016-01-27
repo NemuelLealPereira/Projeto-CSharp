@@ -113,10 +113,10 @@ namespace MANIADESUSHI.GERENCIA.MODEL
 
                 // Effectue la lecture de retourner un objet SqlDataReader
                 DR = objComandoSQL.ExecuteReader();
-                
+                DR.Read();
                 code = DR.GetInt32(0);
 
-                DR.Close();
+                //DR.Close();
                 
                 return code;
 

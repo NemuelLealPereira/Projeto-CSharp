@@ -19,6 +19,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
         private string vmtxtContato1;
         private DataTable dt = new DataTable();
         private List<string> client = new List<string>();
+        private int t = 0;
 
         public frmCadastroCliente()
         {
@@ -124,8 +125,9 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
                 
                 dgvCliente.DataSource = dt;
                 dgvCliente.Refresh();
-                
+
                 chercherClient();
+                
                 
             }
             catch (Exception)
@@ -138,16 +140,30 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
+            client.Clear();
+            this.OnLoad(e);
             client.FindAll(match);
-                
-
+            dgvCliente.Refresh();
+            if (t == 0) 
+            {
+                MessageBox.Show("Cliente não cadastrado!");
+            }
+            t = 0;
+        
         }
 
         private bool match(string obj)
         {
-            if (obj.Contains(txtNom.Text))
+            if (obj.Contains(txtNom.Text.ToLower()))
+            {
+                t++;
                 return true;
-            return false;
+            }
+            else
+            {
+                dgvCliente.Rows.Remove(dgvCliente.Rows[t]);
+                return false;
+            }
         }
 
 
@@ -155,12 +171,11 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
         {
             for (int i = 0; i < dgvCliente.Rows.Count; i++)
             {
-                client.Add(Convert.ToString(dgvCliente[1, i].Value));
+                client.Add(Convert.ToString(dgvCliente[1, i].Value).ToLower());
             }
 
             return client;
         }
-
 
         
     }
