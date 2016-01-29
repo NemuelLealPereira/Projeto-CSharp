@@ -216,6 +216,7 @@ namespace MANIADESUSHI.GERENCIA.MODEL
             }
         }
 
+
         public List<string> returnerLogradouro(string tableBD, string cep)
         {
             try
@@ -224,7 +225,7 @@ namespace MANIADESUSHI.GERENCIA.MODEL
 
                 SqlCommand objComandoSQL = new SqlCommand();
 
-                objComandoSQL.CommandText = "SELECT log_cep, log_uf, log_cidade, log_tipo_logradouro, log_logradouro, tb_frete_fre_bairro FROM " + tableBD + " WHERE log_cep = '" + cep + "'";
+                objComandoSQL.CommandText = "SELECT log_id, log_cep, log_uf, log_cidade, log_tipo_logradouro, log_logradouro, tb_frete_fre_bairro FROM " + tableBD + " WHERE log_cep = '" + cep + "'";
 
                 objComandoSQL.CommandType = CommandType.Text;
 
@@ -241,12 +242,13 @@ namespace MANIADESUSHI.GERENCIA.MODEL
 
                 if (DR.Read())
                 {
-                    registerLogradouro.Add(DR.GetString(0));
+                    registerLogradouro.Add(Convert.ToString(DR.GetInt32(0)));
                     registerLogradouro.Add(DR.GetString(1));
                     registerLogradouro.Add(DR.GetString(2));
                     registerLogradouro.Add(DR.GetString(3));
                     registerLogradouro.Add(DR.GetString(4));
                     registerLogradouro.Add(DR.GetString(5));
+                    registerLogradouro.Add(DR.GetString(6));
                 }
 
 
@@ -303,6 +305,8 @@ namespace MANIADESUSHI.GERENCIA.MODEL
                 throw;
             }
         }
+
+
 
     }
 }

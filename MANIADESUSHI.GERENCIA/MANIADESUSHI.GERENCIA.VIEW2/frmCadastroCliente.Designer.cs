@@ -38,9 +38,9 @@
             this.lbContato2 = new System.Windows.Forms.Label();
             this.mtxtContato1 = new System.Windows.Forms.MaskedTextBox();
             this.lbContato1 = new System.Windows.Forms.Label();
-            this.btnOK = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
-            this.btn_buscar = new System.Windows.Forms.Button();
+            this.btn_pesquisarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,15 +153,15 @@
             this.lbContato1.TabIndex = 39;
             this.lbContato1.Text = "Contato 1";
             // 
-            // btnOK
+            // btnCadastrar
             // 
-            this.btnOK.Location = new System.Drawing.Point(435, 173);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 45;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            this.btnCadastrar.Location = new System.Drawing.Point(435, 171);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCadastrar.TabIndex = 45;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // dgvCliente
             // 
@@ -182,24 +182,24 @@
             this.dgvCliente.Size = new System.Drawing.Size(780, 238);
             this.dgvCliente.TabIndex = 46;
             // 
-            // btn_buscar
+            // btn_pesquisarCliente
             // 
-            this.btn_buscar.Location = new System.Drawing.Point(435, 31);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(75, 20);
-            this.btn_buscar.TabIndex = 47;
-            this.btn_buscar.Text = "Buscar";
-            this.btn_buscar.UseVisualStyleBackColor = true;
-            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            this.btn_pesquisarCliente.Location = new System.Drawing.Point(435, 31);
+            this.btn_pesquisarCliente.Name = "btn_pesquisarCliente";
+            this.btn_pesquisarCliente.Size = new System.Drawing.Size(147, 23);
+            this.btn_pesquisarCliente.TabIndex = 47;
+            this.btn_pesquisarCliente.Text = "Pesquisar Cliente";
+            this.btn_pesquisarCliente.UseVisualStyleBackColor = true;
+            this.btn_pesquisarCliente.Click += new System.EventHandler(this.btn_btn_pesquisarCliente_Click);
             // 
             // frmCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 472);
-            this.Controls.Add(this.btn_buscar);
+            this.Controls.Add(this.btn_pesquisarCliente);
             this.Controls.Add(this.dgvCliente);
-            this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.mtxtContato3);
             this.Controls.Add(this.lbContato3);
             this.Controls.Add(this.mtxtContato2);
@@ -231,9 +231,9 @@
         private System.Windows.Forms.Label lbContato2;
         private System.Windows.Forms.MaskedTextBox mtxtContato1;
         private System.Windows.Forms.Label lbContato1;
-        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.DataGridView dgvCliente;
-        private System.Windows.Forms.Button btn_buscar;
+        private System.Windows.Forms.Button btn_pesquisarCliente;
     }
 }
 

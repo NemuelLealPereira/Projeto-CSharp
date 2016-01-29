@@ -3,7 +3,7 @@
     partial class frmEnregistrerAdresse
     {
         /// <summary>
-        /// Required designer variable.
+        /// Required designer variable. 
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnOK = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             this.lblCep = new System.Windows.Forms.Label();
             this.lblCidade = new System.Windows.Forms.Label();
             this.lblUF = new System.Windows.Forms.Label();
@@ -47,15 +47,15 @@
             this.lblBairro = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnOK
+            // btnCadastrar
             // 
-            this.btnOK.Location = new System.Drawing.Point(450, 202);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 9;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            this.btnCadastrar.Location = new System.Drawing.Point(450, 202);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCadastrar.TabIndex = 9;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // lblCep
             // 
@@ -214,7 +214,7 @@
             this.Controls.Add(this.lblUF);
             this.Controls.Add(this.lblCidade);
             this.Controls.Add(this.lblCep);
-            this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.btnCadastrar);
             this.Name = "frmEnregistrerAdresse";
             this.Text = "Cadastro de Endereço";
             this.ResumeLayout(false);
@@ -224,7 +224,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Label lblCep;
         private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.Label lblUF;
