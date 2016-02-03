@@ -109,16 +109,16 @@ namespace MANIADESUSHI.GERENCIA.MODEL
                 objComandoSQL.Connection = objConexao;
 
                 //// Objet créé pour lire les donné de base
-                SqlDataReader DR;
+                //SqlDataReader DR;
 
                 // Effectue la lecture de retourner un objet SqlDataReader
-                DR = objComandoSQL.ExecuteReader();
-                DR.Read();
-                code = DR.GetInt32(0);
+                //DR = objComandoSQL.ExecuteReader();
+                //DR.Read();
+                //code = DR.GetInt32(0);
 
                 //DR.Close();
                 
-                return code;
+                return Convert.ToInt32( objComandoSQL.ExecuteScalar());
 
             }
             catch (Exception)
@@ -135,13 +135,31 @@ namespace MANIADESUSHI.GERENCIA.MODEL
         /// <param name="tableBD">table du Base de donnés</param>
         public void insererLogradouro(string tableBD, Adresse objAdresse)
         {
-
+            
             try
             {
                 // Objet pour l'exécution d'une commande SQL.
                 SqlCommand objComandoSQL = new SqlCommand();
 
-                objComandoSQL.CommandText = "INSERT INTO " + tableBD + " VALUES ('" + objAdresse.Cep + "','" + objAdresse.UF + "','" + objAdresse.Cidade + "','" + objAdresse.TipoLogradouro + "','" + objAdresse.Logradouro + "','" + objAdresse.Bairro + "')";
+                //objComandoSQL.CommandText = "INSERT INTO " + tableBD + " VALUES ('" + objAdresse.Cep + "','" + objAdresse.UF + "','" + objAdresse.Cidade + "','" + objAdresse.TipoLogradouro + "','" + objAdresse.Logradouro + "','" + objAdresse.Bairro + "')";
+//                objComandoSQL.CommandText = "INSERT INTO " + tableBD + " ( log_cep, log_uf, log_cidade, log_tipo_logradouro, log_logradouro, tb_frete_fre_bairro) VALUES ( ? , ? , ? , ? , ? , ? )";
+                objComandoSQL.CommandText = "INSERT INTO " + tableBD + " ( log_cep, log_uf, log_cidade, log_tipo_logradouro, log_logradouro, tb_frete_fre_bairro) VALUES ( @log_cep , @log_uf , @log_cidade , @log_tipo_logradouro , @log_logradouro , @tb_frete_fre_bairro )";
+              
+                objComandoSQL.Parameters.Clear();
+
+                objComandoSQL.Parameters.Add(new SqlParameter("@log_cep", objAdresse.Cep));
+                objComandoSQL.Parameters.Add(new SqlParameter("@log_uf", objAdresse.UF));
+                objComandoSQL.Parameters.Add(new SqlParameter("@log_cidade", objAdresse.Cidade));
+                objComandoSQL.Parameters.Add(new SqlParameter("@log_tipo_logradouro", objAdresse.TipoLogradouro));
+                objComandoSQL.Parameters.Add(new SqlParameter("@log_logradouro", objAdresse.Logradouro));
+                objComandoSQL.Parameters.Add(new SqlParameter("@tb_frete_fre_bairro", objAdresse.Bairro));
+
+                //objComandoSQL.Parameters.Add("@log_cep",SqlDbType.VarChar, 45).Value = objAdresse.Cep;
+                //objComandoSQL.Parameters.Add("@log_uf", SqlDbType.VarChar, 45).Value = objAdresse.UF;
+                //objComandoSQL.Parameters.Add("@log_cidade", SqlDbType.VarChar, 45).Value = objAdresse.Cidade;
+                //objComandoSQL.Parameters.Add("@log_tipo_logradouro", SqlDbType.VarChar, 45).Value = objAdresse.TipoLogradouro;
+  //              objComandoSQL.Parameters.Add("@log_logradouro", SqlDbType.VarChar, 45).Value = objAdresse.Logradouro;
+//                objComandoSQL.Parameters.Add("@tb_frete_fre_bairro", SqlDbType.VarChar, 45).Value = objAdresse.Bairro;
 
                 objComandoSQL.CommandType = CommandType.Text;
 

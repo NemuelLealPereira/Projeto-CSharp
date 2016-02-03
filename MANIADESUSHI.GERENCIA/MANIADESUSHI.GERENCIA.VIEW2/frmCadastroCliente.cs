@@ -56,7 +56,9 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
         /// <param name="sender"></param>
         /// <param name="e">Il Regarde le événement</param>
         private void frmCadastroCliente_Load(object sender, EventArgs e)
-        {            
+        {
+            // TODO: This line of code loads data into the 'maniaDeSushiDataSet.tb_cliente' table. You can move, or remove it, as needed.
+            this.tb_clienteTableAdapter.Fill(this.maniaDeSushiDataSet.tb_cliente);
             // Pour mémoriser les données des clients
             DataTable dt = new DataTable();
 
@@ -95,7 +97,16 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             {
                 enregistrerClient();
 
+                nettoyerFormulaire();
+
+                this.OnLoad(e);
+
+                txtNom.Focus();
+
+                //this.Visible = false;
+
                 enregistrerAdress();
+
             }
             else
                 MessageBox.Show("Campos Obrigatórios: Nome, Email, Contato 1");

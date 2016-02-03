@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNom = new System.Windows.Forms.TextBox();
             this.lbEmail = new System.Windows.Forms.Label();
@@ -41,7 +42,12 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.btn_pesquisarCliente = new System.Windows.Forms.Button();
+            this.maniaDeSushiDataSet = new MANIADESUSHI.GERENCIA.VIEW2.ManiaDeSushiDataSet();
+            this.tbclienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_clienteTableAdapter = new MANIADESUSHI.GERENCIA.VIEW2.ManiaDeSushiDataSetTableAdapters.tb_clienteTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maniaDeSushiDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbclienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -192,6 +198,20 @@
             this.btn_pesquisarCliente.UseVisualStyleBackColor = true;
             this.btn_pesquisarCliente.Click += new System.EventHandler(this.btn_btn_pesquisarCliente_Click);
             // 
+            // maniaDeSushiDataSet
+            // 
+            this.maniaDeSushiDataSet.DataSetName = "ManiaDeSushiDataSet";
+            this.maniaDeSushiDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbclienteBindingSource
+            // 
+            this.tbclienteBindingSource.DataMember = "tb_cliente";
+            this.tbclienteBindingSource.DataSource = this.maniaDeSushiDataSet;
+            // 
+            // tb_clienteTableAdapter
+            // 
+            this.tb_clienteTableAdapter.ClearBeforeFill = true;
+            // 
             // frmCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,6 +234,8 @@
             this.Text = "Cadastro Cliente";
             this.Load += new System.EventHandler(this.frmCadastroCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maniaDeSushiDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbclienteBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,6 +256,9 @@
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.DataGridView dgvCliente;
         private System.Windows.Forms.Button btn_pesquisarCliente;
+        private ManiaDeSushiDataSet maniaDeSushiDataSet;
+        private System.Windows.Forms.BindingSource tbclienteBindingSource;
+        private ManiaDeSushiDataSetTableAdapters.tb_clienteTableAdapter tb_clienteTableAdapter;
     }
 }
 

@@ -63,7 +63,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
         private void mtxtCep_Leave(object sender, EventArgs e)
         {
 
-            mtxtCep.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals; // Supprimer le formatage
+            mtxtCep.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals; // Supprimer le formatage 
             string vmtxtCep = mtxtCep.Text; //Le texte n'est pas formaté
             mtxtCep.TextMaskFormat = MaskFormat.IncludePromptAndLiterals; // retourner le formatage
 
@@ -172,6 +172,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             ensererAdresse();
 
             this.Close();
+
         }
 
 
@@ -199,9 +200,9 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
                     objConectar.fermerLaConnexion();
 
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Impossível Inserir este Endereço!. Contate o Desenvolvedor");
+                    MessageBox.Show(string.Format("Impossível Inserir este Endereço!. Contate o Desenvolvedor: {0}", ex.Message));
                     throw;
                 }
 
@@ -224,9 +225,9 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
                     objConectar.fermerLaConnexion();
 
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Impossível Inserir este Endereço!. Contate o Desenvolvedor");
+                    MessageBox.Show(string.Format("Impossível Inserir este Endereço!. Contate o Desenvolvedor: {0}", ex.Message));
                     throw;
                 }
             }
