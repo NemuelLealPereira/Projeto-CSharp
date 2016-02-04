@@ -68,30 +68,48 @@ namespace MANIADESUSHI.GERENCIA.MODEL
         /// Il a inséré un donné de client dans le Base de données
         /// </summary>
         /// <param name="tableBD">table du Base de donnés</param>
-        public void insererClient(string tableBD, Cliente objCliente)
+        public bool insererClient(string tableBD, Cliente objCliente)
         {
 
             try
             {
+                
                 // Objet pour l'exécution d'une commande SQL.
                 SqlCommand objComandoSQL = new SqlCommand();
 
-                objComandoSQL.CommandText = "INSERT INTO " + tableBD + " VALUES ( @cli_nome , @cli_email , @cli_contato1 , @cli_contato2 , @cli_contato3 )";
-
-                objComandoSQL.Parameters.Clear();
-
-                objComandoSQL.Parameters.Add(new SqlParameter("@cli_nome", objCliente.Nome));
-                objComandoSQL.Parameters.Add(new SqlParameter("@cli_email", objCliente.Email));
-                objComandoSQL.Parameters.Add(new SqlParameter("@cli_contato1", objCliente.Contato1));
-                objComandoSQL.Parameters.Add(new SqlParameter("@cli_contato2", objCliente.Contato2));
-                objComandoSQL.Parameters.Add(new SqlParameter("@cli_contato3", objCliente.Contato3));
+                objComandoSQL.CommandText = "SELECT cli_id FROM " + tableBD + " WHERE cli_email = '" + objCliente.Email + "'";
 
                 objComandoSQL.CommandType = CommandType.Text;
 
                 objComandoSQL.Connection = objConexao;
 
-                objComandoSQL.ExecuteNonQuery();
+                int codClient = Convert.ToInt32( objComandoSQL.ExecuteScalar());
 
+                if (codClient.Equals(0))
+                {
+
+                    objComandoSQL.CommandText = "INSERT INTO " + tableBD + " VALUES ( @cli_nome , @cli_email , @cli_contato1 , @cli_contato2 , @cli_contato3 )";
+
+                    objComandoSQL.Parameters.Clear();
+
+                    objComandoSQL.Parameters.Add(new SqlParameter("@cli_nome", objCliente.Nome));
+                    objComandoSQL.Parameters.Add(new SqlParameter("@cli_email", objCliente.Email));
+                    objComandoSQL.Parameters.Add(new SqlParameter("@cli_contato1", objCliente.Contato1));
+                    objComandoSQL.Parameters.Add(new SqlParameter("@cli_contato2", objCliente.Contato2));
+                    objComandoSQL.Parameters.Add(new SqlParameter("@cli_contato3", objCliente.Contato3));
+
+                    objComandoSQL.CommandType = CommandType.Text;
+
+                    objComandoSQL.Connection = objConexao;
+
+                    objComandoSQL.ExecuteNonQuery();
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
             }
             catch (Exception)

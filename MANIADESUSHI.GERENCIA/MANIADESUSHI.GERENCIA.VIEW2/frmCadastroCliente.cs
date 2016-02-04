@@ -38,7 +38,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
         /// </summary>
         LaConnexion objConectar = new LaConnexion(Properties.Settings.Default.ManiaDeSushiConnectionString);
 
-        string nomClient;
+        private string nomClient;
 
         /// <summary>
         /// Inicialization du composants
@@ -95,18 +95,25 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             
             if (!ilEstRempli())
             {
-                enregistrerClient();
+                if (enregistrerClient())
+                {
+                    nettoyerFormulaire();
 
-                nettoyerFormulaire();
+                    this.OnLoad(e);
 
-                this.OnLoad(e);
+                    txtNom.Focus();
 
-                txtNom.Focus();
+                    //this.Visible = false;
 
-                //this.Visible = false;
+                    enregistrerAdress();
+                }
 
-                enregistrerAdress();
-
+                else
+                {
+                    MessageBox.Show(string.Format("Já existe cadastro com o E-mail: {0}. Favor informar outro!", txtEmail.Text));
+                    txtEmail.Focus();
+                    return;
+                }
             }
             else
                 MessageBox.Show("Campos Obrigatórios: Nome, Email, Contato 1");
@@ -134,7 +141,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
         /// <summary>
         /// Enregistrer client
         /// </summary>
-        public void enregistrerClient()
+        public bool enregistrerClient()
         {
             mtxtContato2.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals; // Il suprime le formatage
             string vmtxtContato2 = mtxtContato2.Text; //valeur n'est pas formaté
@@ -150,11 +157,14 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             {
                 objConectar.ouvertConnexion();
 
-                objConectar.insererClient("tb_cliente", objCliente);
-                
-                this.codeClient = objConectar.retounerCodeClient("tb_cliente", objCliente);
-                
+                bool clientEstEnregistre = objConectar.insererClient("tb_cliente", objCliente);
+
+                if (clientEstEnregistre)
+                    this.codeClient = objConectar.retounerCodeClient("tb_cliente", objCliente);
+
                 objConectar.fermerLaConnexion();
+
+                return clientEstEnregistre;
             }
             catch (Exception)
             {
@@ -272,6 +282,24 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
                 mtxtContato1.Text = dgvCliente.CurrentRow.Cells[3].Value.ToString();
                 mtxtContato2.Text = dgvCliente.CurrentRow.Cells[4].Value.ToString();
                 mtxtContato3.Text = dgvCliente.CurrentRow.Cells[5].Value.ToString();
+            }
+        }
+
+        private void dgvCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                objConectar.ouvertConnexion();
+
+                //objConectar.selectionnerTable("tb_endereco", "tb_logradouro");
+
+
+                objConectar.fermerLaConnexion();
+            }
+            catch (Exception)
+            {
+                
+                throw;
             }
         }
 

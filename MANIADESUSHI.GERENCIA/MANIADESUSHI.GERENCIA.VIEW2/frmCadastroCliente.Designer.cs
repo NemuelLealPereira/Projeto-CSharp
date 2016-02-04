@@ -199,6 +199,7 @@
             this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCliente.Size = new System.Drawing.Size(780, 238);
             this.dgvCliente.TabIndex = 46;
+            this.dgvCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellDoubleClick);
             this.dgvCliente.SelectionChanged += new System.EventHandler(this.dgvCliente_SelectionChanged);
             // 
             // btn_pesquisarCliente
