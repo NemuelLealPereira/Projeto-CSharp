@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNom = new System.Windows.Forms.TextBox();
+            this.tbclienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.maniaDeSushiDataSet = new MANIADESUSHI.GERENCIA.VIEW2.ManiaDeSushiDataSet();
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbNome = new System.Windows.Forms.Label();
             this.mtxtContato3 = new System.Windows.Forms.MaskedTextBox();
@@ -42,12 +44,10 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.btn_pesquisarCliente = new System.Windows.Forms.Button();
-            this.maniaDeSushiDataSet = new MANIADESUSHI.GERENCIA.VIEW2.ManiaDeSushiDataSet();
-            this.tbclienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_clienteTableAdapter = new MANIADESUSHI.GERENCIA.VIEW2.ManiaDeSushiDataSetTableAdapters.tb_clienteTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maniaDeSushiDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbclienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maniaDeSushiDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -65,6 +65,16 @@
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(285, 20);
             this.txtNom.TabIndex = 21;
+            // 
+            // tbclienteBindingSource
+            // 
+            this.tbclienteBindingSource.DataMember = "tb_cliente";
+            this.tbclienteBindingSource.DataSource = this.maniaDeSushiDataSet;
+            // 
+            // maniaDeSushiDataSet
+            // 
+            this.maniaDeSushiDataSet.DataSetName = "ManiaDeSushiDataSet";
+            this.maniaDeSushiDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lbEmail
             // 
@@ -172,7 +182,9 @@
             // dgvCliente
             // 
             this.dgvCliente.AllowUserToAddRows = false;
+            this.dgvCliente.AllowUserToDeleteRows = false;
             this.dgvCliente.AllowUserToResizeColumns = false;
+            this.dgvCliente.AllowUserToResizeRows = false;
             this.dgvCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -187,6 +199,7 @@
             this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCliente.Size = new System.Drawing.Size(780, 238);
             this.dgvCliente.TabIndex = 46;
+            this.dgvCliente.SelectionChanged += new System.EventHandler(this.dgvCliente_SelectionChanged);
             // 
             // btn_pesquisarCliente
             // 
@@ -197,16 +210,6 @@
             this.btn_pesquisarCliente.Text = "Pesquisar Cliente";
             this.btn_pesquisarCliente.UseVisualStyleBackColor = true;
             this.btn_pesquisarCliente.Click += new System.EventHandler(this.btn_btn_pesquisarCliente_Click);
-            // 
-            // maniaDeSushiDataSet
-            // 
-            this.maniaDeSushiDataSet.DataSetName = "ManiaDeSushiDataSet";
-            this.maniaDeSushiDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbclienteBindingSource
-            // 
-            this.tbclienteBindingSource.DataMember = "tb_cliente";
-            this.tbclienteBindingSource.DataSource = this.maniaDeSushiDataSet;
             // 
             // tb_clienteTableAdapter
             // 
@@ -233,9 +236,9 @@
             this.Name = "frmCadastroCliente";
             this.Text = "Cadastro Cliente";
             this.Load += new System.EventHandler(this.frmCadastroCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maniaDeSushiDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbclienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maniaDeSushiDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

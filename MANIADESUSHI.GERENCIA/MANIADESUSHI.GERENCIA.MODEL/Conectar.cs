@@ -76,13 +76,22 @@ namespace MANIADESUSHI.GERENCIA.MODEL
                 // Objet pour l'exécution d'une commande SQL.
                 SqlCommand objComandoSQL = new SqlCommand();
 
-                objComandoSQL.CommandText = "INSERT INTO " + tableBD + " VALUES ('" + objCliente.Nome + "','" + objCliente.Email + "','" + objCliente.Contato1 + "','" + objCliente.Contato2 + "','" + objCliente.Contato3 + "')";
+                objComandoSQL.CommandText = "INSERT INTO " + tableBD + " VALUES ( @cli_nome , @cli_email , @cli_contato1 , @cli_contato2 , @cli_contato3 )";
+
+                objComandoSQL.Parameters.Clear();
+
+                objComandoSQL.Parameters.Add(new SqlParameter("@cli_nome", objCliente.Nome));
+                objComandoSQL.Parameters.Add(new SqlParameter("@cli_email", objCliente.Email));
+                objComandoSQL.Parameters.Add(new SqlParameter("@cli_contato1", objCliente.Contato1));
+                objComandoSQL.Parameters.Add(new SqlParameter("@cli_contato2", objCliente.Contato2));
+                objComandoSQL.Parameters.Add(new SqlParameter("@cli_contato3", objCliente.Contato3));
 
                 objComandoSQL.CommandType = CommandType.Text;
 
                 objComandoSQL.Connection = objConexao;
 
                 objComandoSQL.ExecuteNonQuery();
+
 
             }
             catch (Exception)
@@ -91,16 +100,20 @@ namespace MANIADESUSHI.GERENCIA.MODEL
             }
 
         }
-
-
-
+        
+        /// <summary>
+        /// Il retourne le code du client Courant
+        /// </summary>
+        /// <param name="tableBD">table client</param>
+        /// <param name="objCliente">object client</param>
+        /// <returns></returns>
         public int retounerCodeClient(string tableBD, Cliente objCliente)
         {
             try
             {
                 SqlCommand objComandoSQL = new SqlCommand();
 
-                int code;
+                //int code;
 
                 objComandoSQL.CommandText = "SELECT cli_id FROM " + tableBD + " WHERE cli_email = '" + objCliente.Email + "'";
 
@@ -127,10 +140,9 @@ namespace MANIADESUSHI.GERENCIA.MODEL
                 throw;
             }
         }
-
-
+        
         /// <summary>
-        /// Il a inséré un donné du Adresse du client dans le Base de données
+        /// Il enregistre le logradouro du client courant dans le Base de données
         /// </summary>
         /// <param name="tableBD">table du Base de donnés</param>
         public void insererLogradouro(string tableBD, Adresse objAdresse)
@@ -140,10 +152,8 @@ namespace MANIADESUSHI.GERENCIA.MODEL
             {
                 // Objet pour l'exécution d'une commande SQL.
                 SqlCommand objComandoSQL = new SqlCommand();
-
-                //objComandoSQL.CommandText = "INSERT INTO " + tableBD + " VALUES ('" + objAdresse.Cep + "','" + objAdresse.UF + "','" + objAdresse.Cidade + "','" + objAdresse.TipoLogradouro + "','" + objAdresse.Logradouro + "','" + objAdresse.Bairro + "')";
-//                objComandoSQL.CommandText = "INSERT INTO " + tableBD + " ( log_cep, log_uf, log_cidade, log_tipo_logradouro, log_logradouro, tb_frete_fre_bairro) VALUES ( ? , ? , ? , ? , ? , ? )";
-                objComandoSQL.CommandText = "INSERT INTO " + tableBD + " ( log_cep, log_uf, log_cidade, log_tipo_logradouro, log_logradouro, tb_frete_fre_bairro) VALUES ( @log_cep , @log_uf , @log_cidade , @log_tipo_logradouro , @log_logradouro , @tb_frete_fre_bairro )";
+                
+                objComandoSQL.CommandText = "INSERT INTO " + tableBD + " VALUES ( @log_cep , @log_uf , @log_cidade , @log_tipo_logradouro , @log_logradouro , @tb_frete_fre_bairro )";
               
                 objComandoSQL.Parameters.Clear();
 
@@ -153,13 +163,6 @@ namespace MANIADESUSHI.GERENCIA.MODEL
                 objComandoSQL.Parameters.Add(new SqlParameter("@log_tipo_logradouro", objAdresse.TipoLogradouro));
                 objComandoSQL.Parameters.Add(new SqlParameter("@log_logradouro", objAdresse.Logradouro));
                 objComandoSQL.Parameters.Add(new SqlParameter("@tb_frete_fre_bairro", objAdresse.Bairro));
-
-                //objComandoSQL.Parameters.Add("@log_cep",SqlDbType.VarChar, 45).Value = objAdresse.Cep;
-                //objComandoSQL.Parameters.Add("@log_uf", SqlDbType.VarChar, 45).Value = objAdresse.UF;
-                //objComandoSQL.Parameters.Add("@log_cidade", SqlDbType.VarChar, 45).Value = objAdresse.Cidade;
-                //objComandoSQL.Parameters.Add("@log_tipo_logradouro", SqlDbType.VarChar, 45).Value = objAdresse.TipoLogradouro;
-  //              objComandoSQL.Parameters.Add("@log_logradouro", SqlDbType.VarChar, 45).Value = objAdresse.Logradouro;
-//                objComandoSQL.Parameters.Add("@tb_frete_fre_bairro", SqlDbType.VarChar, 45).Value = objAdresse.Bairro;
 
                 objComandoSQL.CommandType = CommandType.Text;
 
@@ -175,14 +178,19 @@ namespace MANIADESUSHI.GERENCIA.MODEL
 
         }
 
-
+        /// <summary>
+        /// Il retourne le code du logradouro du client Courant
+        /// </summary>
+        /// <param name="tableBD">table logradouro</param>
+        /// <param name="objAdresse">Object Adresse</param>
+        /// <returns></returns>
         public int retounerCodeLogradouro(string tableBD, Adresse objAdresse)
         {
             try
             {
                 SqlCommand objComandoSQL = new SqlCommand();
 
-                int code;
+                //int code;
 
                 objComandoSQL.CommandText = "SELECT log_id FROM " + tableBD + " WHERE tb_frete_fre_bairro = '" + objAdresse.Bairro + "'";
 
@@ -191,18 +199,18 @@ namespace MANIADESUSHI.GERENCIA.MODEL
                 objComandoSQL.Connection = objConexao;
 
                 //// Objet créé pour lire les donné de base
-                SqlDataReader DR;
+                //SqlDataReader DR;
 
                 // Effectue la lecture de retourner un objet SqlDataReader
-                DR = objComandoSQL.ExecuteReader();
+                //DR = objComandoSQL.ExecuteReader();
 
-                DR.Read();
+                //DR.Read();
 
-                code = DR.GetInt32(0);
+                //code = DR.GetInt32(0);
 
-                DR.Close();
+                //DR.Close();
 
-                return code;
+                return Convert.ToInt32(objComandoSQL.ExecuteScalar());
 
             }
             catch (Exception)
@@ -212,7 +220,12 @@ namespace MANIADESUSHI.GERENCIA.MODEL
             }
         }
 
-
+        /// <summary>
+        /// Il enregistre le Adresse du client courant dans le Base de données
+        /// </summary>
+        /// <param name="tableBD">table du Base de donnés</param>
+        /// <param name="objAdresse">Adresse complet du client courant</param>
+        /// <param name="codeLogradouro">code du logradouro du client courant</param>
         public void insererAdresse(string tableBD, Adresse objAdresse, int codeLogradouro)
         {
             try
@@ -220,7 +233,14 @@ namespace MANIADESUSHI.GERENCIA.MODEL
                 // Objet pour l'exécution d'une commande SQL.
                 SqlCommand objComandoSQL = new SqlCommand();
 
-                objComandoSQL.CommandText = "INSERT INTO " + tableBD + " VALUES ('" + objAdresse.Numero + "','" + objAdresse.Complemento + "'," + objAdresse.CodeClient + "," + codeLogradouro + ")";
+                objComandoSQL.CommandText = "INSERT INTO " + tableBD + " VALUES ( @end_numero , @end_complemento , @tb_cliente_cli_id , @tb_logradouro_log_id)";
+
+                objComandoSQL.Parameters.Clear();
+
+                objComandoSQL.Parameters.Add(new SqlParameter("@end_numero", objAdresse.Numero));
+                objComandoSQL.Parameters.Add(new SqlParameter("@end_complemento", objAdresse.Complemento));
+                objComandoSQL.Parameters.Add(new SqlParameter("@tb_cliente_cli_id", objAdresse.CodeClient));
+                objComandoSQL.Parameters.Add(new SqlParameter("@tb_logradouro_log_id", codeLogradouro));
 
                 objComandoSQL.CommandType = CommandType.Text;
 
@@ -234,7 +254,12 @@ namespace MANIADESUSHI.GERENCIA.MODEL
             }
         }
 
-
+        /// <summary>
+        /// Il retourne une liste avec les reingsenement de un registre de la table logradouro
+        /// </summary>
+        /// <param name="tableBD"></param>
+        /// <param name="cep"></param>
+        /// <returns></returns>
         public List<string> returnerLogradouro(string tableBD, string cep)
         {
             try
@@ -243,7 +268,7 @@ namespace MANIADESUSHI.GERENCIA.MODEL
 
                 SqlCommand objComandoSQL = new SqlCommand();
 
-                objComandoSQL.CommandText = "SELECT log_id, log_cep, log_uf, log_cidade, log_tipo_logradouro, log_logradouro, tb_frete_fre_bairro FROM " + tableBD + " WHERE log_cep = '" + cep + "'";
+                objComandoSQL.CommandText = "SELECT * FROM " + tableBD + " WHERE log_cep = '" + cep + "'";
 
                 objComandoSQL.CommandType = CommandType.Text;
 
@@ -278,12 +303,16 @@ namespace MANIADESUSHI.GERENCIA.MODEL
             }
             catch (Exception)
             {
-
                 throw;
             }
 
         }
 
+        /// <summary>
+        /// Il Selectionne la table qu'est passé par paramètre.
+        /// </summary>
+        /// <param name="tableBD"> table </param>
+        /// <returns>Data Table de la table qu'est passé par paramètre</returns>
         public DataTable selectionnerTable(string tableBD)
         {
             try
@@ -323,7 +352,6 @@ namespace MANIADESUSHI.GERENCIA.MODEL
                 throw;
             }
         }
-
 
 
     }

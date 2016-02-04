@@ -38,7 +38,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
         /// </summary>
         LaConnexion objConectar = new LaConnexion(Properties.Settings.Default.ManiaDeSushiConnectionString);
 
-
+        string nomClient;
 
         /// <summary>
         /// Inicialization du composants
@@ -184,6 +184,8 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
         /// <param name="e"></param>
         private void btn_btn_pesquisarCliente_Click(object sender, EventArgs e)
         {
+            nomClient = txtNom.Text;
+
             if (txtNom.Text.Equals(""))
             {
                 MessageBox.Show("Insira o nome do cliente!");
@@ -235,7 +237,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
         /// <returns>Il retourne vrai ou faux</returns>
         private bool match(string obj)
         {
-            if (obj.Contains(txtNom.Text.ToLower()))
+            if (obj.Contains(nomClient.ToLower()))
             {
                 qtdeClient++;
                 return true;
@@ -259,6 +261,18 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             this.mtxtContato1.Text = "";
             this.mtxtContato2.Text = "";
             this.mtxtContato3.Text = "";
+        }
+
+        private void dgvCliente_SelectionChanged(object sender, EventArgs e)
+        {
+            if (!(dgvCliente.CurrentRow == null))
+            {
+                txtNom.Text = dgvCliente.CurrentRow.Cells[1].Value.ToString();
+                txtEmail.Text = dgvCliente.CurrentRow.Cells[2].Value.ToString();
+                mtxtContato1.Text = dgvCliente.CurrentRow.Cells[3].Value.ToString();
+                mtxtContato2.Text = dgvCliente.CurrentRow.Cells[4].Value.ToString();
+                mtxtContato3.Text = dgvCliente.CurrentRow.Cells[5].Value.ToString();
+            }
         }
 
     }
