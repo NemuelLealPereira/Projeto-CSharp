@@ -287,20 +287,30 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
 
         private void dgvCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            DataTable dt = new DataTable();
+
             try
             {
                 objConectar.ouvertConnexion();
-
-                //objConectar.selectionnerTable("tb_endereco", "tb_logradouro");
-
+                
+                dt = objConectar.retournerAdresseComplet(dgvCliente.CurrentRow.Cells[0].Value.ToString());
 
                 objConectar.fermerLaConnexion();
+
+                consulterAdress(dt);
             }
             catch (Exception)
             {
                 
                 throw;
             }
+        }
+
+        private void consulterAdress(DataTable dt)
+        {
+            Form objfrmEnregistreAdresse = new FrmAdresseClient(dt);
+            objfrmEnregistreAdresse.Show();
+
         }
 
     }

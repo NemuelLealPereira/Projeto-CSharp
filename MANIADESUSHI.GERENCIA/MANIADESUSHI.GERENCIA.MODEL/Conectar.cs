@@ -372,5 +372,45 @@ namespace MANIADESUSHI.GERENCIA.MODEL
         }
 
 
+
+        public DataTable retournerAdresseComplet(string codClient)
+        {
+            try
+            {
+                SqlCommand objComandoSQL = new SqlCommand();
+
+                objComandoSQL.CommandText = "SELECT * FROM tb_logradouro LOGR " +
+                                            "JOIN tb_endereco ENDER ON ENDER.tb_logradouro_log_id = LOGR.log_id " + 
+                                                "WHERE ENDER.tb_cliente_cli_id =" + codClient;
+
+                objComandoSQL.CommandType = CommandType.Text;
+
+                objComandoSQL.Connection = objConexao;
+
+                //// Objet créé pour lire les donné de base. Il ne besoin pas de faire la instaciation
+                DataTable dt = new DataTable();
+                SqlDataReader DR;
+
+                // Effectue la lecture de retourner un objet SqlDataReader
+                DR = objComandoSQL.ExecuteReader();
+                //DR.Read();
+                // faire la lecture du première register et aprés saut pour la prochaine ligne.
+
+
+
+                dt.Load(DR);
+
+                DR.Close();
+
+                return dt;
+
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
     }
 }
