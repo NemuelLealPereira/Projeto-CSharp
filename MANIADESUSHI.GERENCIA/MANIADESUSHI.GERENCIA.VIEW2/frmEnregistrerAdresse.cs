@@ -33,8 +33,6 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
         /// Pour mémoriser le logradouro complet
         /// </summary>
         List<string> registerLogradouro = new List<string>();
-             
-
 
         /// <summary>
         /// Constructeur
@@ -52,8 +50,6 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             this.cmbCidade.SelectedItem = "Salvador";
             this.cmbCidade.Enabled = false;
         }
-
-
 
         /// <summary>
         /// Ce methode rempli le formulaire
@@ -107,9 +103,6 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
 
         }
 
-
-
-
         /// <summary>
         /// Il rempli le Formulaire
         /// </summary>
@@ -135,9 +128,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             }
             return false;
         }
-        
-        
-        
+                
         /// <summary>
         /// il permet les camps
         /// </summary>
@@ -148,8 +139,6 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             this.txtBairro.Enabled = true;
         }
         
-
-
         /// <summary>
         /// Il nettoye le Formulaire
         /// </summary>
@@ -160,8 +149,6 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             this.txtBairro.Text = "";
         }
 
-
-
         /// <summary>
         /// Il enregistre le adress du client courant
         /// </summary>
@@ -169,13 +156,17 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
         /// <param name="e"></param>
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            ensererAdresse();
+            if (ilEstRempli())
+            {
+                ensererAdresse();
+                this.Close();
+            }
+            else
+                MessageBox.Show("Todos os Campos são obrigatórios!");
 
-            this.Close();
+            
 
         }
-
-
 
         /// <summary>
         /// Il enregistre le adress du client courant
@@ -232,6 +223,18 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
                 }
             }
         }
-        
+
+        /// <summary>
+        /// verifier si les champs de formulaire sont Rempli
+        /// </summary>
+        /// <returns>Il retourne vrai ou faux</returns>
+        private bool ilEstRempli()
+        {   
+            if (txtBairro.Text.Equals("") || txtTipoLogradouro.Text.Equals("") || txtLogradouro.Text.Equals("") || txtNumero.Text.Equals("") || txtComplemento.Text.Equals(""))
+                return false; 
+           return true;
+            
+        }
+    
     }
 }

@@ -38,6 +38,9 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
         /// </summary>
         LaConnexion objConectar = new LaConnexion(Properties.Settings.Default.ManiaDeSushiConnectionString);
 
+        /// <summary>
+        /// Pour maintenir, garder, conserver le nom du client courant qui a été selectionné au dataGrideView
+        /// </summary>
         private string nomClient;
 
         /// <summary>
@@ -47,16 +50,14 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
         {
             InitializeComponent();
         }
-
-
-
+        
         /// <summary>
         /// charger le DataGridView avec les données de touts les clients
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e">Il Regarde le événement</param>
         private void frmCadastroCliente_Load(object sender, EventArgs e)
-        {
+        { 
             // TODO: This line of code loads data into the 'maniaDeSushiDataSet.tb_cliente' table. You can move, or remove it, as needed.
             this.tb_clienteTableAdapter.Fill(this.maniaDeSushiDataSet.tb_cliente);
             // Pour mémoriser les données des clients
@@ -82,9 +83,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
 
             ChargerListClient();
         }
-
-
-
+        
         /// <summary>
         /// Il enregistre le client
         /// </summary>
@@ -93,7 +92,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             
-            if (!ilEstRempli())
+            if (ilEstRempli())
             {
                 if (enregistrerClient())
                 {
@@ -118,9 +117,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             else
                 MessageBox.Show("Campos Obrigatórios: Nome, Email, Contato 1");
         }
-
-
-
+        
         /// <summary>
         /// verifier si les champs de formulaire sont Rempli
         /// </summary>
@@ -132,15 +129,14 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             string vmtxtContato1 = mtxtContato1.Text; //valeur n'est pas formaté
 
             if (txtNom.Text.Equals("") || txtEmail.Text.Equals("") || vmtxtContato1.Equals(""))
-                return true;
-            return false;
+                return false;
+            return true;
         }
-
-
-
+        
         /// <summary>
         /// Enregistrer client
         /// </summary>
+        /// <returns>Il retourne vrai si le client a été enregistré, autrement faux </returns>
         public bool enregistrerClient()
         {
             mtxtContato2.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals; // Il suprime le formatage
@@ -172,9 +168,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
                 throw;
             }
         }
-
-
-        
+                
         /// <summary>
         /// Enregistrer l'adress du client courant
         /// </summary>
@@ -184,9 +178,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             objfrmEnregistreAdresse.Show();
 
         }
-
-
-
+        
         /// <summary>
         /// Verifier touts les clients par une partie de son nom et après il modifie le DataGridview avec leur.
         /// </summary>
@@ -220,9 +212,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             qtdeClient = 0;
         
         }
-
-
-
+        
         /// <summary>
         /// Mémoriser les données des clients dans la List client
         /// </summary>
@@ -237,9 +227,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             // Il Retourne la list chargé des donées de tout les clients
             return client;
         }
-
-
-
+        
         /// <summary>
         /// Verifier touts les clients par une partie de son nom
         /// </summary>
@@ -258,9 +246,7 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
                 return false;
             }
         }
-
-
-
+        
         /// <summary>
         /// Il nettoye le Formulaire
         /// </summary>
@@ -272,7 +258,12 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             this.mtxtContato2.Text = "";
             this.mtxtContato3.Text = "";
         }
-
+        
+        /// <summary>
+        /// Il rempli le formulaire
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvCliente_SelectionChanged(object sender, EventArgs e)
         {
             if (!(dgvCliente.CurrentRow == null))
@@ -285,6 +276,11 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             }
         }
 
+        /// <summary>
+        /// Il faut pour retourner l'adresse complet du client dans un datatable.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataTable dt = new DataTable();
@@ -297,7 +293,10 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
 
                 objConectar.fermerLaConnexion();
 
-                consulterAdress(dt);
+                if (dt.Rows.Count != 0)
+                    consulterAdresse(dt);
+                else
+                    MessageBox.Show("Não existe endereço cadastrado para esse cliente");
             }
             catch (Exception)
             {
@@ -306,9 +305,13 @@ namespace MANIADESUSHI.GERENCIA.VIEW2
             }
         }
 
-        private void consulterAdress(DataTable dt)
+        /// <summary>
+        /// Il consulte l'adresse du client
+        /// </summary>
+        /// <param name="dt"></param>
+        private void consulterAdresse(DataTable dt)
         {
-            Form objfrmEnregistreAdresse = new FrmAdresseClient(dt);
+            Form objfrmEnregistreAdresse = new frmAdresseClient(dt);
             objfrmEnregistreAdresse.Show();
 
         }

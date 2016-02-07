@@ -132,7 +132,7 @@
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(335, 102);
+            this.lblNumero.Location = new System.Drawing.Point(276, 94);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(44, 13);
             this.lblNumero.TabIndex = 12;
@@ -141,11 +141,11 @@
             // lblComplemento
             // 
             this.lblComplemento.AutoSize = true;
-            this.lblComplemento.Location = new System.Drawing.Point(335, 125);
+            this.lblComplemento.Location = new System.Drawing.Point(276, 125);
             this.lblComplemento.Name = "lblComplemento";
-            this.lblComplemento.Size = new System.Drawing.Size(71, 13);
+            this.lblComplemento.Size = new System.Drawing.Size(140, 13);
             this.lblComplemento.TabIndex = 13;
-            this.lblComplemento.Text = "Complemento";
+            this.lblComplemento.Text = "Complemento / Referência :";
             // 
             // txtLogradouro
             // 
@@ -156,16 +156,17 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(425, 95);
+            this.txtNumero.Location = new System.Drawing.Point(366, 91);
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(100, 20);
+            this.txtNumero.Size = new System.Drawing.Size(50, 20);
             this.txtNumero.TabIndex = 7;
             // 
             // txtComplemento
             // 
-            this.txtComplemento.Location = new System.Drawing.Point(425, 121);
+            this.txtComplemento.Location = new System.Drawing.Point(279, 141);
+            this.txtComplemento.Multiline = true;
             this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(100, 20);
+            this.txtComplemento.Size = new System.Drawing.Size(246, 53);
             this.txtComplemento.TabIndex = 8;
             // 
             // mtxtCep

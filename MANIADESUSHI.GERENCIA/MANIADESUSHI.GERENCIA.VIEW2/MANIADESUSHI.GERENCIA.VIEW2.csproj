@@ -44,11 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmAdresseClient.cs">
+    <Compile Include="frmAdresseClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAdresseClient.Designer.cs">
-      <DependentUpon>FrmAdresseClient.cs</DependentUpon>
+    <Compile Include="frmAdresseClient.Designer.cs">
+      <DependentUpon>frmAdresseClient.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCadastroCliente.cs">
       <SubType>Form</SubType>
@@ -69,8 +69,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAdresseClient.resx">
-      <DependentUpon>FrmAdresseClient.cs</DependentUpon>
+    <EmbeddedResource Include="frmAdresseClient.resx">
+      <DependentUpon>frmAdresseClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadastroCliente.resx">
       <DependentUpon>frmCadastroCliente.cs</DependentUpon>

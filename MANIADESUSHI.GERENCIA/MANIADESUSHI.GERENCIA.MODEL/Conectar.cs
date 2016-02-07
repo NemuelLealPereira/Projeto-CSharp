@@ -379,7 +379,8 @@ namespace MANIADESUSHI.GERENCIA.MODEL
             {
                 SqlCommand objComandoSQL = new SqlCommand();
 
-                objComandoSQL.CommandText = "SELECT * FROM tb_logradouro LOGR " +
+                objComandoSQL.CommandText = "SELECT LOGR.log_cep, LOGR.log_uf, LOGR.log_cidade, LOGR.log_tipo_logradouro, LOGR.log_logradouro, LOGR.tb_frete_fre_bairro, ENDER.end_numero, ENDER.end_complemento " +
+                                            "FROM tb_logradouro LOGR " +
                                             "JOIN tb_endereco ENDER ON ENDER.tb_logradouro_log_id = LOGR.log_id " + 
                                                 "WHERE ENDER.tb_cliente_cli_id =" + codClient;
 
