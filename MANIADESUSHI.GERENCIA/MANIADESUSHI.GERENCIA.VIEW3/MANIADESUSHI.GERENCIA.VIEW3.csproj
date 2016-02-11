@@ -77,6 +77,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MANIADESUSHI.GERENCIA.MODEL\MANIADESUSHI.GERENCIA.MODEL.csproj">
+      <Project>{381bf562-e379-434a-9e51-7e01541f0fe2}</Project>
+      <Name>MANIADESUSHI.GERENCIA.MODEL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

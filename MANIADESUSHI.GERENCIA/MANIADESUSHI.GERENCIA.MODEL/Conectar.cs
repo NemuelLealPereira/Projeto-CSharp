@@ -338,7 +338,7 @@ namespace MANIADESUSHI.GERENCIA.MODEL
 
                 SqlCommand objComandoSQL = new SqlCommand();
 
-                objComandoSQL.CommandText = "SELECT * FROM " + tableBD;
+                objComandoSQL.CommandText = "SELECT cli_id Código, cli_nome Nome, cli_email 'E-mail', cli_contato1 Contato, cli_contato3 Contato, cli_contato3 Contato FROM " + tableBD;
 
                 objComandoSQL.CommandType = CommandType.Text;
 
@@ -379,7 +379,7 @@ namespace MANIADESUSHI.GERENCIA.MODEL
             {
                 SqlCommand objComandoSQL = new SqlCommand();
 
-                objComandoSQL.CommandText = "SELECT LOGR.log_cep, LOGR.log_uf, LOGR.log_cidade, LOGR.log_tipo_logradouro, LOGR.log_logradouro, LOGR.tb_frete_fre_bairro, ENDER.end_numero, ENDER.end_complemento " +
+                objComandoSQL.CommandText = "SELECT LOGR.log_cep Cep, LOGR.log_uf UF, LOGR.log_cidade Cidade, LOGR.log_tipo_logradouro 'Tipo Logradouro', LOGR.log_logradouro Logradouro, LOGR.tb_frete_fre_bairro Bairro, ENDER.end_numero Numero, ENDER.end_complemento Complemento " +
                                             "FROM tb_logradouro LOGR " +
                                             "JOIN tb_endereco ENDER ON ENDER.tb_logradouro_log_id = LOGR.log_id " + 
                                                 "WHERE ENDER.tb_cliente_cli_id =" + codClient;
@@ -413,5 +413,48 @@ namespace MANIADESUSHI.GERENCIA.MODEL
             }
 
         }
+
+        public DataTable produit()
+        {
+            try 
+            {	        
+
+                SqlCommand objComandoSQL = new SqlCommand();
+
+                objComandoSQL.CommandText = "SELECT TP.tpro_nome Produto, SP.spro_nome 'Cod - Sabor', SP.spro_descricao Descrição, VP.vpro_tam_qtde Tamanho, VP.vpro_valor Valor " +
+                                            "FROM tb_tipo_produto as TP , tb_sabor_produto as SP, tb_valor_produto as VP " +
+                                            "WHERE TP.tpro_id = SP.tb_tipo_produto_tpro_id " +
+                                            "AND SP.spro_id = VP.tb_sabor_produto_pro_id";
+                
+                objComandoSQL.CommandType = CommandType.Text;
+
+                objComandoSQL.Connection = objConexao;
+
+                //// Objet créé pour lire les donné de base. Il ne besoin pas de faire la instaciation
+                DataTable dt = new DataTable();
+                SqlDataReader DR;
+
+                // Effectue la lecture de retourner un objet SqlDataReader
+                DR = objComandoSQL.ExecuteReader();
+                //DR.Read();
+                // faire la lecture du première register et aprés saut pour la prochaine ligne.
+
+                
+
+                dt.Load(DR);
+
+                DR.Close();
+
+                return dt;
+		
+	}
+	catch (Exception)
+	{
+		
+		throw;
+	}
+            
+        }
+    
     }
 }
