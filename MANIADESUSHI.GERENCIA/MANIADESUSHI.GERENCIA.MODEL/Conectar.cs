@@ -421,7 +421,7 @@ namespace MANIADESUSHI.GERENCIA.MODEL
 
                 SqlCommand objComandoSQL = new SqlCommand();
 
-                objComandoSQL.CommandText = "SELECT TP.tpro_nome Produto, SP.spro_nome 'Cod - Sabor', SP.spro_descricao Descrição, VP.vpro_tam_qtde Tamanho, VP.vpro_valor Valor " +
+                objComandoSQL.CommandText = "SELECT TP.tpro_nome Produto, SP.spro_nome 'Cod - Sabor', SP.spro_descricao Descrição, VP.vpro_tam_qtde Tamanho, VP.vpro_valor Valor, VP.vpro_id " +
                                             "FROM tb_tipo_produto as TP , tb_sabor_produto as SP, tb_valor_produto as VP " +
                                             "WHERE TP.tpro_id = SP.tb_tipo_produto_tpro_id " +
                                             "AND SP.spro_id = VP.tb_sabor_produto_pro_id";
@@ -447,14 +447,20 @@ namespace MANIADESUSHI.GERENCIA.MODEL
 
                 return dt;
 		
-	}
-	catch (Exception)
-	{
+	        }
+	        catch (Exception)
+	        {
 		
-		throw;
-	}
+		        throw;
+	        }
             
         }
-    
+
+
+
+        public void enregistreProduit(string codProduto)
+        { 
+
+        }
     }
 }

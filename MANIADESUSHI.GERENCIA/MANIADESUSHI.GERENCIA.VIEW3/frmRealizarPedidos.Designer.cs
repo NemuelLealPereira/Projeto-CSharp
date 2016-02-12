@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRealizarPedidos));
             this.lbl_pesquisarProduto = new System.Windows.Forms.Label();
             this.txtpesquisarPedido = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_registrarPedido = new System.Windows.Forms.Button();
+            this.lbl_vvalorTotal = new System.Windows.Forms.Label();
+            this.lbl_valorTotal = new System.Windows.Forms.Label();
             this.dgv_carrinho = new System.Windows.Forms.DataGridView();
             this.dgv_produtos = new System.Windows.Forms.DataGridView();
             this.tpro_nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.spro_nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vpro_valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_valorTotal = new System.Windows.Forms.Label();
-            this.lbl_vvalorTotal = new System.Windows.Forms.Label();
+            this.vpro_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_excluir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_carrinho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_produtos)).BeginInit();
@@ -61,6 +65,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btn_registrarPedido);
             this.groupBox1.Controls.Add(this.lbl_vvalorTotal);
             this.groupBox1.Controls.Add(this.lbl_valorTotal);
             this.groupBox1.Controls.Add(this.dgv_carrinho);
@@ -71,22 +77,57 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Carrinho";
             // 
+            // btn_registrarPedido
+            // 
+            this.btn_registrarPedido.Location = new System.Drawing.Point(206, 178);
+            this.btn_registrarPedido.Name = "btn_registrarPedido";
+            this.btn_registrarPedido.Size = new System.Drawing.Size(101, 23);
+            this.btn_registrarPedido.TabIndex = 3;
+            this.btn_registrarPedido.Text = "Registrar Pedido";
+            this.btn_registrarPedido.UseVisualStyleBackColor = true;
+            this.btn_registrarPedido.Click += new System.EventHandler(this.btn_registrarPedido_Click);
+            // 
+            // lbl_vvalorTotal
+            // 
+            this.lbl_vvalorTotal.AutoSize = true;
+            this.lbl_vvalorTotal.Location = new System.Drawing.Point(77, 178);
+            this.lbl_vvalorTotal.Name = "lbl_vvalorTotal";
+            this.lbl_vvalorTotal.Size = new System.Drawing.Size(10, 13);
+            this.lbl_vvalorTotal.TabIndex = 2;
+            this.lbl_vvalorTotal.Text = " ";
+            // 
+            // lbl_valorTotal
+            // 
+            this.lbl_valorTotal.AutoSize = true;
+            this.lbl_valorTotal.Location = new System.Drawing.Point(7, 178);
+            this.lbl_valorTotal.Name = "lbl_valorTotal";
+            this.lbl_valorTotal.Size = new System.Drawing.Size(64, 13);
+            this.lbl_valorTotal.TabIndex = 1;
+            this.lbl_valorTotal.Text = "Valor Total :";
+            // 
             // dgv_carrinho
             // 
             this.dgv_carrinho.AllowUserToAddRows = false;
+            this.dgv_carrinho.AllowUserToDeleteRows = false;
+            this.dgv_carrinho.AllowUserToResizeColumns = false;
+            this.dgv_carrinho.AllowUserToResizeRows = false;
             this.dgv_carrinho.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_carrinho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_carrinho.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tpro_nome,
             this.spro_nome,
-            this.vpro_valor});
+            this.vpro_valor,
+            this.vpro_id,
+            this.col_excluir});
             this.dgv_carrinho.Location = new System.Drawing.Point(6, 31);
             this.dgv_carrinho.MultiSelect = false;
             this.dgv_carrinho.Name = "dgv_carrinho";
+            this.dgv_carrinho.ReadOnly = true;
             this.dgv_carrinho.RowHeadersVisible = false;
             this.dgv_carrinho.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_carrinho.Size = new System.Drawing.Size(302, 140);
             this.dgv_carrinho.TabIndex = 0;
+            this.dgv_carrinho.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_carrinho_CellClick);
             // 
             // dgv_produtos
             // 
@@ -100,6 +141,7 @@
             this.dgv_produtos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_produtos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_produtos.Location = new System.Drawing.Point(12, 256);
+            this.dgv_produtos.MultiSelect = false;
             this.dgv_produtos.Name = "dgv_produtos";
             this.dgv_produtos.ReadOnly = true;
             this.dgv_produtos.RowHeadersVisible = false;
@@ -110,36 +152,44 @@
             // 
             // tpro_nome
             // 
+            this.tpro_nome.FillWeight = 119.797F;
             this.tpro_nome.HeaderText = "Produto";
             this.tpro_nome.Name = "tpro_nome";
+            this.tpro_nome.ReadOnly = true;
             // 
             // spro_nome
             // 
+            this.spro_nome.FillWeight = 119.797F;
             this.spro_nome.HeaderText = "Cod - Sabor";
             this.spro_nome.Name = "spro_nome";
+            this.spro_nome.ReadOnly = true;
             // 
             // vpro_valor
             // 
+            this.vpro_valor.FillWeight = 119.797F;
             this.vpro_valor.HeaderText = "Valor";
             this.vpro_valor.Name = "vpro_valor";
+            this.vpro_valor.ReadOnly = true;
             // 
-            // lbl_valorTotal
+            // vpro_id
             // 
-            this.lbl_valorTotal.AutoSize = true;
-            this.lbl_valorTotal.Location = new System.Drawing.Point(7, 178);
-            this.lbl_valorTotal.Name = "lbl_valorTotal";
-            this.lbl_valorTotal.Size = new System.Drawing.Size(64, 13);
-            this.lbl_valorTotal.TabIndex = 1;
-            this.lbl_valorTotal.Text = "Valor Total :";
+            this.vpro_id.HeaderText = "Código do Produto";
+            this.vpro_id.Name = "vpro_id";
+            this.vpro_id.ReadOnly = true;
+            this.vpro_id.Visible = false;
             // 
-            // lbl_vvalorTotal
+            // col_excluir
             // 
-            this.lbl_vvalorTotal.AutoSize = true;
-            this.lbl_vvalorTotal.Location = new System.Drawing.Point(77, 178);
-            this.lbl_vvalorTotal.Name = "lbl_vvalorTotal";
-            this.lbl_vvalorTotal.Size = new System.Drawing.Size(10, 13);
-            this.lbl_vvalorTotal.TabIndex = 2;
-            this.lbl_vvalorTotal.Text = " ";
+            this.col_excluir.FillWeight = 40.60914F;
+            this.col_excluir.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.col_excluir.HeaderText = "";
+            this.col_excluir.MinimumWidth = 20;
+            this.col_excluir.Name = "col_excluir";
+            this.col_excluir.ReadOnly = true;
+            this.col_excluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_excluir.Text = "X";
+            this.col_excluir.ToolTipText = "Excluir";
+            this.col_excluir.UseColumnTextForButtonValue = true;
             // 
             // frmRealizarPedidos
             // 
@@ -150,6 +200,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtpesquisarPedido);
             this.Controls.Add(this.lbl_pesquisarProduto);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmRealizarPedidos";
             this.Text = "Realizar Pedidos";
             this.Load += new System.EventHandler(this.frmRealizarPedidos_Load);
@@ -169,11 +220,14 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgv_carrinho;
         private System.Windows.Forms.DataGridView dgv_produtos;
+        private System.Windows.Forms.Label lbl_vvalorTotal;
+        private System.Windows.Forms.Label lbl_valorTotal;
+        private System.Windows.Forms.Button btn_registrarPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn tpro_nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn spro_nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn vpro_valor;
-        private System.Windows.Forms.Label lbl_vvalorTotal;
-        private System.Windows.Forms.Label lbl_valorTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vpro_id;
+        private System.Windows.Forms.DataGridViewButtonColumn col_excluir;
 
     }
 }
